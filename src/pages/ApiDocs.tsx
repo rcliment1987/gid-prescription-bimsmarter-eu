@@ -8,9 +8,10 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Copy, Play, ExternalLink, ArrowLeft, Download, FileCode, Terminal } from "lucide-react";
+import { Copy, Play, ExternalLink, ArrowLeft, Download, FileCode, Terminal, FileText } from "lucide-react";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import { generateIntegrationGuidePDF } from "@/lib/pdf-guide-generator";
 
 const BASE_URL = "https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1";
 
@@ -619,6 +620,32 @@ const ApiDocs = () => {
                   </Button>
                 </CardContent>
               </Card>
+            </div>
+
+            {/* PDF Guide Download */}
+            <div className="p-4 bg-background rounded-lg border border-primary/30">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <h4 className="font-semibold flex items-center gap-2">
+                    <FileText className="h-5 w-5 text-primary" />
+                    Guide d'intégration complet (PDF)
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    Documentation illustrée de 13 pages avec captures d'écran annotées pour chaque étape
+                  </p>
+                </div>
+                <Button 
+                  onClick={() => {
+                    generateIntegrationGuidePDF();
+                    toast.success("PDF généré : BIMsmarter_Guide_Integration_Revit.pdf");
+                  }}
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                >
+                  <FileText className="h-4 w-4 mr-2" />
+                  Télécharger le guide PDF
+                </Button>
+              </div>
             </div>
 
             {/* Usage Instructions */}
