@@ -137,8 +137,9 @@ export function PrescriptionsTable({
     return acc;
   }, {} as Record<string, GIDRecord[]>);
 
-  // Get all categories for filter UI
-  const allCategories = Object.keys(categoryCounts).sort();
+  // Get all categories for filter UI in specific order
+  const categoryOrder = ["Classe et type IFC", "Informations alphanumériques", "Documentation", "Classification"];
+  const allCategories = categoryOrder.filter(cat => categoryCounts[cat] !== undefined);
 
   return (
     <Card>
