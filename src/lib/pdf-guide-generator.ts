@@ -619,10 +619,11 @@ export const generateIntegrationGuidePDF = async () => {
   currentY += 8;
   doc.setFillColor(...COLORS.lightBg);
   doc.roundedRect(margin, currentY, pageWidth - 2 * margin, 10, 2, 2, "F");
-  doc.setFontSize(9);
+  doc.setFontSize(7);
   doc.setFont("courier", "normal");
   doc.setTextColor(...COLORS.primary);
-  doc.text("https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1", margin + 5, currentY + 6);
+  const baseUrl = "https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1";
+  doc.text(baseUrl, margin + 5, currentY + 6);
   
   currentY += 18;
   doc.setFontSize(12);
@@ -722,11 +723,11 @@ export const generateIntegrationGuidePDF = async () => {
   currentY += 8;
   doc.setFillColor(...COLORS.lightBg);
   doc.roundedRect(margin, currentY, pageWidth - 2 * margin, 15, 2, 2, "F");
-  doc.setFontSize(8);
+  doc.setFontSize(6);
   doc.setFont("courier", "normal");
   doc.setTextColor(...COLORS.text);
-  doc.text('curl "https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1/', margin + 5, currentY + 6);
-  doc.text('      get-prescriptions?element=Mur&phase=PDE"', margin + 5, currentY + 11);
+  doc.text('curl "https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1/get-prescriptions', margin + 5, currentY + 6);
+  doc.text('      ?element=Mur&phase=PDE"', margin + 5, currentY + 11);
   
   currentY += 25;
   doc.setFontSize(12);
@@ -737,13 +738,13 @@ export const generateIntegrationGuidePDF = async () => {
   currentY += 8;
   doc.setFillColor(...COLORS.lightBg);
   doc.roundedRect(margin, currentY, pageWidth - 2 * margin, 30, 2, 2, "F");
-  doc.setFontSize(7);
+  doc.setFontSize(6);
   doc.setFont("courier", "normal");
   doc.setTextColor(...COLORS.text);
   const jsExample = [
+    'const baseUrl = "https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1";',
     'const response = await fetch(',
-    '  "https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1/get-prescriptions"',
-    '  + "?element=Mur&phase=PDE"',
+    '  baseUrl + "/get-prescriptions?element=Mur&phase=PDE"',
     ');',
     'const data = await response.json();',
     'console.log(data.data.prescriptions);',
@@ -850,9 +851,9 @@ export const generateIntegrationGuidePDF = async () => {
   
   currentY += 10;
   const resources = [
-    { label: "Application web BIMsmarter", url: "https://gid-prescription-bimsmarter-eu.lovable.app" },
-    { label: "Documentation API interactive", url: "https://gid-prescription-bimsmarter-eu.lovable.app/api-docs" },
-    { label: "Standard GID - CRTI-B", url: "https://crtib.lu" },
+    { label: "Application web BIMsmarter", url: "gid-prescription-bimsmarter-eu.lovable.app" },
+    { label: "Documentation API interactive", url: "gid-prescription-bimsmarter-eu.lovable.app/api-docs" },
+    { label: "Standard GID - CRTI-B", url: "crtib.lu" },
   ];
   
   resources.forEach((res) => {
@@ -860,9 +861,10 @@ export const generateIntegrationGuidePDF = async () => {
     doc.setFont("helvetica", "bold");
     doc.setTextColor(...COLORS.text);
     doc.text(`• ${res.label}`, margin + 5, currentY);
+    doc.setFontSize(8);
     doc.setFont("helvetica", "normal");
     doc.setTextColor(...COLORS.accent);
-    doc.text(res.url, margin + 10, currentY + 5);
+    doc.text(`https://${res.url}`, margin + 10, currentY + 5);
     currentY += 12;
   });
   

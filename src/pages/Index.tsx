@@ -8,7 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { ClipboardList, GitCompare, Code2, History, Star, X } from "lucide-react";
+import { ClipboardList, GitCompare, Code2, History, Star, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import {
   loadGIDData,
   getUniqueElements,
@@ -29,8 +30,9 @@ const Index = () => {
   const [isLoadingElements, setIsLoadingElements] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
 
-  const { history, addToHistory } = useSearchHistory();
+  const { history, addToHistory, removeFromHistory } = useSearchHistory();
   const { favorites, isFavorite, toggleFavorite, removeFavorite } = useFavorites();
+  const { theme, setTheme } = useTheme();
 
   // Load elements on mount with progress tracking
   useEffect(() => {
@@ -125,12 +127,24 @@ const Index = () => {
           <img src={bimSmarterLogo} alt="BIMsmarter" className="h-8 w-auto rounded" />
           <span className="text-sm text-muted-foreground">| Guide de Prescriptions GID</span>
         </a>
-        <Link to="/api-docs">
-          <Button variant="outline" size="sm" className="flex items-center gap-2 border-[hsl(199,89%,48%,0.3)] hover:bg-[hsl(199,89%,48%,0.1)]">
-            <Code2 className="h-4 w-4" />
-            API & Scripts
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="h-9 w-9"
+          >
+            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
           </Button>
-        </Link>
+          <Link to="/api-docs">
+            <Button variant="outline" size="sm" className="flex items-center gap-2 border-[hsl(199,89%,48%,0.3)] hover:bg-[hsl(199,89%,48%,0.1)]">
+              <Code2 className="h-4 w-4" />
+              API & Scripts
+            </Button>
+          </Link>
+        </div>
       </header>
 
       <main className="flex-1 p-6 space-y-6">
@@ -146,7 +160,7 @@ const Index = () => {
         )}
 
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Guide de Prescriptions GID</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-[hsl(199,89%,48%)]">Guide de Prescriptions GID</h1>
           <p className="text-muted-foreground">
             Consultez les propriétés à renseigner dans Revit selon le standard GID (CRTI-B Luxembourg)
           </p>
@@ -186,11 +200,18 @@ const Index = () => {
             {history.map((item) => (
               <Badge
                 key={`${item.element}-${item.phase}-${item.timestamp}`}
-                variant="outline"
-                className="cursor-pointer hover:bg-accent"
+                variant="secondary"
+                className="cursor-pointer hover:bg-secondary/80 flex items-center gap-1"
                 onClick={() => handleHistorySelect(item.element, item.phase)}
               >
                 {item.element} - {item.phase}
+                <X
+                  className="h-3 w-3 hover:text-destructive"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeFromHistory(item.element, item.phase);
+                  }}
+                />
               </Badge>
             ))}
           </div>
