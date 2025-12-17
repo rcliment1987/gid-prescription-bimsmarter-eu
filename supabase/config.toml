@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.get-phases]
 verify_jwt = false
+
+[functions.gid-chatbot]
+verify_jwt = false

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PrescriptionsTable } from "@/components/PrescriptionsTable";
 import { ProjectConfig } from "@/components/ProjectConfig";
 import { PhaseComparison } from "@/components/PhaseComparison";
+import { GIDChatbot } from "@/components/GIDChatbot";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -102,15 +103,30 @@ const Index = () => {
   const isConfigComplete = projectPhase && selectedElement;
   const currentIsFavorite = selectedElement && projectPhase && isFavorite(selectedElement, projectPhase);
 
+  // Filter prescriptions for chatbot context
+  const filteredPrescriptions = useMemo(() => {
+    if (!selectedElement || !projectPhase) return [];
+    return gidData.filter(
+      (record) =>
+        record.Categorie === selectedElement &&
+        (record.Phase === projectPhase || record.Phase === "Toutes")
+    );
+  }, [gidData, selectedElement, projectPhase]);
+
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <header className="sticky top-0 z-10 flex h-14 items-center justify-between gap-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6">
-        <div className="flex items-center gap-3">
+    <div className="min-h-screen flex flex-col bg-bimsmarter">
+      <header className="sticky top-0 z-10 flex h-14 items-center justify-between gap-4 border-b border-[hsl(199,89%,48%,0.2)] glass-panel px-6">
+        <a
+          href="https://bimsmarter.eu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+        >
           <img src={bimSmarterLogo} alt="BIMsmarter" className="h-8 w-auto rounded" />
           <span className="text-sm text-muted-foreground">| Guide de Prescriptions GID</span>
-        </div>
+        </a>
         <Link to="/api-docs">
-          <Button variant="outline" size="sm" className="flex items-center gap-2">
+          <Button variant="outline" size="sm" className="flex items-center gap-2 border-[hsl(199,89%,48%,0.3)] hover:bg-[hsl(199,89%,48%,0.1)]">
             <Code2 className="h-4 w-4" />
             API & Scripts
           </Button>
@@ -236,6 +252,13 @@ const Index = () => {
           </TabsContent>
         </Tabs>
       </main>
+
+      {/* GID Chatbot */}
+      <GIDChatbot
+        selectedElement={selectedElement}
+        projectPhase={projectPhase}
+        prescriptions={filteredPrescriptions}
+      />
     </div>
   );
 };
