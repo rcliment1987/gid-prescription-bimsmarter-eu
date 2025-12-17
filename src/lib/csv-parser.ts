@@ -41,24 +41,67 @@ function parseCSV(text: string): GIDRecord[] {
   const lines = text.split("\n").filter(line => line.trim());
   if (lines.length === 0) return [];
 
+  // Detect separator from header line
+  const headerLine = lines[0];
+  const separator = headerLine.includes(';') ? ';' : ',';
+  const isCommaFormat = separator === ',';
+  
   // Skip header line (first line)
   const dataLines = lines.slice(1);
   
   return dataLines.map(line => {
-    // Split by semicolon (CSV uses ; as separator)
-    const cols = line.split(";");
+    const cols = isCommaFormat ? parseCSVLine(line) : line.split(separator);
     
-    return {
-      Element: cols[0]?.trim() || "",
-      Categorie: cols[1]?.trim() || "",
-      Sous_categorie: cols[2]?.trim() || "",
-      Phase: cols[3]?.trim() || "",
-      Propriete: cols[4]?.trim() || "",
-      IFC_Reference: cols[5]?.trim() || "",
-      Revit_Param: cols[6]?.trim() || "",
-      Requis: cols[cols.length - 1]?.trim() || "", // Last column is Requis
-    };
-  }).filter(record => record.Element); // Filter out empty records
+    if (isCommaFormat) {
+      // New comma-separated format (IFC2x3 new file)
+      // Columns: Element, Categorie, Sous_categorie, Phase, Type de document, Propriété, IFC_Reference, Revit_Param, ...
+      return {
+        Element: cols[0]?.trim() || "",
+        Categorie: cols[1]?.trim() || "",
+        Sous_categorie: cols[2]?.trim() || "",
+        Phase: cols[3]?.trim() || "",
+        Propriete: cols[5]?.trim() || "", // "Propriété" column (index 5)
+        IFC_Reference: cols[6]?.trim() || "",
+        Revit_Param: cols[7]?.trim() || "",
+        Requis: cols[4]?.trim() || "", // "Type de document"
+      };
+    } else {
+      // Semicolon-separated format (IFC4 file)
+      // Columns: Element;Categorie;Sous_categorie;Phase;Propriété;IFC_Reference;Revit_Param;Version_IFC;Requis
+      return {
+        Element: cols[0]?.trim() || "",
+        Categorie: cols[1]?.trim() || "",
+        Sous_categorie: cols[2]?.trim() || "",
+        Phase: cols[3]?.trim() || "",
+        Propriete: cols[4]?.trim() || "",
+        IFC_Reference: cols[5]?.trim() || "",
+        Revit_Param: cols[6]?.trim() || "",
+        Requis: cols[8]?.trim() || "",
+      };
+    }
+  }).filter(record => record.Element);
+}
+
+function parseCSVLine(line: string): string[] {
+  const result: string[] = [];
+  let current = "";
+  let inQuotes = false;
+  
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    
+    if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      result.push(current);
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+  result.push(current);
+  
+  return result;
 }
 
 export function getUniqueElements(records: GIDRecord[]): string[] {
