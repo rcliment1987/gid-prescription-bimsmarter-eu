@@ -12,6 +12,7 @@ import { Copy, Play, ExternalLink, ArrowLeft, Download, FileCode, Terminal, File
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { generateIntegrationGuidePDF } from "@/lib/pdf-guide-generator";
+import bimSmarterLogo from "@/assets/bimsmarter-logo.jpg";
 
 const BASE_URL = "https://xdzsqiemmiplxckfcsar.supabase.co/functions/v1";
 
@@ -526,6 +527,7 @@ const ApiDocs = () => {
               <ArrowLeft className="h-5 w-5" />
             </Button>
           </Link>
+          <img src={bimSmarterLogo} alt="BIMsmarter" className="h-10 w-auto rounded" />
           <div>
             <h1 className="text-3xl font-bold">API & Scripts d'intégration</h1>
             <p className="text-muted-foreground">
