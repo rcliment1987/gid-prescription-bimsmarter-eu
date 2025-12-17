@@ -1,4 +1,4 @@
-Element,Categorie,Sous_categorie,Phase,Type de document,Propriété,IFC_Reference,Revit_Param,Nom,IFC Type,Catégorie Revit,Classification,Descriptif
+Element,Categorie,Sous_categorie,Phase,Type de document,Propriété,Paramètre IFC,Paramètre Revit_ENG,Nom,IFC Type,Catégorie Revit,Classification,Numéro - Description
 Actionneur,Classe et type IFC,,Toutes,,,,,Moteur de volet/store,IfcActuatorType.ELECTRICACTUATOR,Electrical Equipment,,
 Actionneur,Classe et type IFC,,Toutes,,,,,Ferme-porte,IfcActuatorType.HANDOPERATEDACTUATOR,Electrical Equipment,,
 Actionneur,Classe et type IFC,,Toutes,,,,,Ferme porte motorisé (ouvre-porte),IfcActuatorType.ELECTRICACTUATOR,Electrical Equipment,,
@@ -42,18 +42,18 @@ Actionneur,Documentation,Maintenance et fiches techniques,EXP,Carnet d'entretien
 Actionneur,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Actionneur,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Actionneur,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.10 – Integrated Automation Control of Equipment
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.20 – Integrated Automation Control of Conveying
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.10 - Integrated Automation Control of Equipment
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.20 - Integrated Automation Control of Conveying
 Equipment"
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.30 – Integrated Automation Control of Fire-Suppression
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.30 - Integrated Automation Control of Fire-Suppression
 Systems"
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.40 – Integrated Automation Control of Plumbing Systems
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.50 – Integrated Automation Control of HVAC Systems
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.60 – Integrated Automation Control of Electrical Systems
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.70 – Integrated Automation Control of Communication Systems
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.80 – Integrated Automation Control of Electronic Safety
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.40 - Integrated Automation Control of Plumbing Systems
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.50 - Integrated Automation Control of HVAC Systems
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.60 - Integrated Automation Control of Electrical Systems
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.70 - Integrated Automation Control of Communication Systems
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.80 - Integrated Automation Control of Electronic Safety
 and Security Systems"
-Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.90 – Integrated Automation Supplementary Components
+Actionneur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.90 - Integrated Automation Supplementary Components
 Appareil audiovisuel,Classe et type IFC,,Toutes,,,,,Amplificateur de puissance,IfcElectricApplianceType.USERDEFINED[AMPLIFIER],Communication Devices,,
 Appareil audiovisuel,Classe et type IFC,,Toutes,,,,,Amplificateur intégré,IfcElectricApplianceType.USERDEFINED[AMPLIFIER],Communication Devices,,
 Appareil audiovisuel,Classe et type IFC,,Toutes,,,,,Commutateur audio-vidéo,IfcElectricApplianceType.USERDEFINED[SWITCHER],Communication Devices,,
@@ -120,7 +120,7 @@ Appareil audiovisuel,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,
 Appareil audiovisuel,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Appareil audiovisuel,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Appareil audiovisuel,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6020 - Voice Communications
-Appareil audiovisuel,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6030 – Audio-Video Communication
+Appareil audiovisuel,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6030 - Audio-Video Communication
 Appareil de données,Classe et type IFC,,Toutes,,,,,Antenne gsm,IfcElectricApplianceType.USERDEFINED[ANTENNA],Data Devices,,
 Appareil de données,Classe et type IFC,,Toutes,,,,,Relai gsm,IfcElectricApplianceType.USERDEFINED[ANTENNA],Data Devices,,
 Appareil de données,Classe et type IFC,,Toutes,,,,,Passerelle domotique,IfcElectricApplianceType.USERDEFINED[GATEWAY],Data Devices,,
@@ -178,7 +178,7 @@ Appareil de données,Documentation,Maintenance et fiches techniques,EXP,Carnet d
 Appareil de données,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Appareil de données,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Appareil de données,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Appareil de données,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6010 – Data Communications
+Appareil de données,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6010 - Data Communications
 Appareil électrique,Classe et type IFC,,Toutes,,,,,Congélateur,IfcElectricApplianceType.FREEZER,Electrical Equipment,,
 Appareil électrique,Classe et type IFC,,Toutes,,,,,Combiné réfrigérateur=congélateur,IfcElectricApplianceType.FRIDGE_FREEZER,Electrical Equipment,,
 Appareil électrique,Classe et type IFC,,Toutes,,,,,Frigo,IfcElectricApplianceType.REFRIGERATOR,Electrical Equipment,,
@@ -241,7 +241,7 @@ Appareil électrique,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,
 Appareil électrique,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Appareil électrique,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Appareil électrique,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Appareil électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.50 – Wiring Devices
+Appareil électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.50 - Wiring Devices
 Armoire protection incendie,Classe et type IFC,,Toutes,,,,,Armoire protection incendie,IfcFireSuppressionTerminalType.USERDEFINED[FIRE_CABINETS],Fire Protection,,
 Armoire protection incendie,Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),ePset_FireSuppressionTerminalTypeCommon.Status,-,,,,,
 Armoire protection incendie,Informations alphanumériques,Niveau objet,PDE,,Statut de rénovation (Archicad),ePset_FireSuppressionTerminalTypeCommon.Status,-,,,,,
@@ -285,7 +285,7 @@ Armoire protection incendie,Documentation,Plans et schémas,PDE,Schéma unifilai
 Armoire protection incendie,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Armoire protection incendie,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Armoire protection incendie,Documentation,Plans et schémas,APD,Performances à atteindre,,,,,,,,
-Armoire protection incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4030.10 – Fire Protection Cabinets
+Armoire protection incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4030.10 - Fire Protection Cabinets
 Ascenseur,Classe et type IFC,,Toutes,,,,,Ascenseur,IfcTransportElement.ELEVATOR,Vertical Circulation,,
 Ascenseur,Géométrie,Exigences minima,APD,,Volume intervention maintenance,,,,,,,
 Ascenseur,Géométrie,Exigences minima,PDE,,Volume intervention maintenance,,,,,,,
@@ -336,7 +336,7 @@ Ascenseur,Documentation,Maintenance et fiches techniques,EXP,Notice de maintenan
 Ascenseur,Documentation,Maintenance et fiches techniques,EXE,Carnet d'entretien,,,,,,,,
 Ascenseur,Documentation,Maintenance et fiches techniques,EXP,Carnet d'entretien,,,,,,,,
 Ascenseur,Documentation,Plans et schémas,APD,Schéma d'emprise,,,,,,,,
-Ascenseur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.10 – Elevators
+Ascenseur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.10 - Elevators
 Bâtiment,Classe et type IFC,,Toutes,,,,,Bâtiment,IfcBuilding,Project Information,,
 Bâtiment,Informations alphanumériques,Niveau objet,APS,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
 Bâtiment,Informations alphanumériques,Niveau objet,APD,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -440,7 +440,7 @@ Borne incendie,Documentation,Plans et schémas,APD,Performances à atteindre,,,,
 Borne incendie,Documentation,Plans et schémas,PDE,Performances à atteindre,,,,,,,,
 Borne incendie,Documentation,Plans et schémas,EXE,Performances à atteindre,,,,,,,,
 Borne incendie,Documentation,Plans et schémas,EXP,Performances à atteindre,,,,,,,,
-Borne incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 – Fire Suppression
+Borne incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 - Fire Suppression
 Caisson de fondation,Classe et type IFC,,Toutes,,,,,Caisson de fondation,IfcFooting.USERDEFINED[CAISSON_FOUNDATION],Structural Foundations,,
 Caisson de fondation,Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),ePset_FootingCommon.Status,-,,,,,
 Caisson de fondation,Informations alphanumériques,Niveau objet,PDE,,Statut de rénovation (Archicad),ePset_FootingCommon.Status,-,,,,,
@@ -496,7 +496,7 @@ Caisson de fondation,Documentation,Plans et schémas,PDE,Rapport stabilité,,,,,
 Caisson de fondation,Documentation,Plans et schémas,EXE,Rapport stabilité,,,,,,,,
 Caisson de fondation,Documentation,Plans et schémas,EXP,Rapport stabilité,,,,,,,,
 Caisson de fondation,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Caisson de fondation,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.20 – Caissons
+Caisson de fondation,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.20 - Caissons
 Centrale de traitement d'air,Classe et type IFC,,Toutes,,,,,Centrale de traitement d'air (cta),IfcUnitaryEquipmentType.AIRHANDLER,Mechanical Equipment,,
 Centrale de traitement d'air,Classe et type IFC,,Toutes,,,,,Pompe à chaleur air-air (y compris réversible),IfcUnitaryEquipmentType.SPLITSYSTEM,Mechanical Equipment,,
 Centrale de traitement d'air,Classe et type IFC,,Toutes,,,,,Déshumidificateur,IfcUnitaryEquipmentType.USERDEFINED[DEHUMIDIFIER],Mechanical Equipment,,
@@ -548,8 +548,8 @@ Centrale de traitement d'air,Documentation,Plans et schémas,APD,Performances à
 Centrale de traitement d'air,Documentation,Plans et schémas,PDE,Performances à atteindre,,,,,,,,
 Centrale de traitement d'air,Documentation,Plans et schémas,EXE,Performances à atteindre,,,,,,,,
 Centrale de traitement d'air,Documentation,Plans et schémas,EXP,Performances à atteindre,,,,,,,,
-Centrale de traitement d'air,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020 – Heating System
-Centrale de traitement d'air,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030 – Cooling System
+Centrale de traitement d'air,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020 - Heating System
+Centrale de traitement d'air,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030 - Cooling System
 Chemin de câbles,Classe et type IFC,,Toutes,,,,,Chemin de câbles,IfcCableCarrierSegmentType.CABLETRAYSEGMENT,Cable Trays,,
 Chemin de câbles,Classe et type IFC,,Toutes,,,,,Chemin de câbles fermé,IfcCableCarrierSegmentType.CABLETRUNKINGSEGMENT,Cable Trays,,
 Chemin de câbles,Classe et type IFC,,Toutes,,,,,Echelle à câbles,IfcCableCarrierSegmentType.CABLELADDERSEGMENT,Cable Trays,,
@@ -586,17 +586,17 @@ Chemin de câbles,Documentation,Maintenance et fiches techniques,EXP,,Carnet d'e
 Chemin de câbles,Documentation,Plans et schémas,PDE,,Schéma unifilaire,,,,,,,
 Chemin de câbles,Documentation,Plans et schémas,EXE,,Schéma unifilaire,,,,,,,
 Chemin de câbles,Documentation,Plans et schémas,EXP,,Schéma unifilaire,,,,,,,
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.30 – Power Distribution
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5020.90 – Electrical Service and Distribution Supplementary
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.30 - Power Distribution
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5020.90 - Electrical Service and Distribution Supplementary
 Components"
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.10 – Branch Wiring System
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5030.90 – General Purpose Electrical Power Supplementary
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.10 - Branch Wiring System
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5030.90 - General Purpose Electrical Power Supplementary
 Components"
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.20 – Branch Wiring for Lighting
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.90 – Lighting Supplementary Components
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5080.90 – Miscellaneous Electrical Systems Supplementary
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.20 - Branch Wiring for Lighting
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.90 - Lighting Supplementary Components
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5080.90 - Miscellaneous Electrical Systems Supplementary
 Components"
-Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6090.10 – Supplementary Components
+Chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6090.10 - Supplementary Components
 Cheminée,Classe et type IFC,,Toutes,,,,,Ensemble de cheminée,IfcBuildingElementProxy.USERDEFINED[CHIMNEY],Pipes,,
 Cheminée,Informations alphanumériques,Niveau objet,APD,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
 Cheminée,Informations alphanumériques,Niveau objet,PDE,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -633,8 +633,8 @@ Cheminée,Documentation,Plans et schémas,PDE,Détail d'exécution,,,,,,,,
 Cheminée,Documentation,Plans et schémas,EXE,Détail d'exécution,,,,,,,,
 Cheminée,Documentation,Plans et schémas,EXP,Détail d'exécution,,,,,,,,
 Cheminée,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Cheminée,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3060.50 – Vents and Hatches
-Cheminée,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.10 – Roof Accessories
+Cheminée,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3060.50 - Vents and Hatches
+Cheminée,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.10 - Roof Accessories
 Clapet et registre,Classe et type IFC,,Toutes,,,,,Hotte,IfcDamperType.FUMEHOODEXHAUST,Duct Accessories,,
 Clapet et registre,Classe et type IFC,,Toutes,,,,,Clapet anti-retour,IfcDamperType.BACKDRAFTDAMPER,Duct Accessories,,
 Clapet et registre,Classe et type IFC,,Toutes,,,,,Clapet coupe-feu,IfcDamperType.FIREDAMPER,Duct Accessories,,
@@ -678,9 +678,9 @@ Clapet et registre,Documentation,Maintenance et fiches techniques,EXP,Carnet d'e
 Clapet et registre,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Clapet et registre,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Clapet et registre,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Clapet et registre,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 – HVAC Air Distribution
-Clapet et registre,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4030.50 – Breathing air Replenishment Systems
-Clapet et registre,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1090.50 – Fireplace and Stoves
+Clapet et registre,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 - HVAC Air Distribution
+Clapet et registre,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4030.50 - Breathing air Replenishment Systems
+Clapet et registre,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1090.50 - Fireplace and Stoves
 Colonne,Classe et type IFC,,Toutes,,,,,Colonne (isolée),IfcColumn.COLUMN,Structural Columns,,
 Colonne,Classe et type IFC,,Toutes,,,,,Pilastre (mur),IfcColumn.USERDEFINED[PILASTER],Structural Columns,,
 Colonne,Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),Pset_ColumnCommon.Status,-,,,,,
@@ -742,10 +742,10 @@ Colonne,Documentation,Plans et schémas,PDE,Rapport stabilité,,,,,,,,
 Colonne,Documentation,Plans et schémas,EXE,Rapport stabilité,,,,,,,,
 Colonne,Documentation,Plans et schémas,EXP,Rapport stabilité,,,,,,,,
 Colonne,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.10 – Floor Structural Frame
-Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020.10 – Roof Structural Frame
-Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 – Exterior Ceiling
-Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020.40 – Metal Building Systems
+Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.10 - Floor Structural Frame
+Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020.10 - Roof Structural Frame
+Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 - Exterior Ceiling
+Colonne,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020.40 - Metal Building Systems
 Coupleur incendie,Classe et type IFC,,Toutes,,,,,Coupleur incendie,IfcFireSuppressionTerminalType.BREECHINGINLET,Fire Protection,,
 Coupleur incendie,Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),ePset_FireSuppressionTerminalTypeCommon.Status,-,,,,,
 Coupleur incendie,Informations alphanumériques,Niveau objet,PDE,,Statut de rénovation (Archicad),ePset_FireSuppressionTerminalTypeCommon.Status,-,,,,,
@@ -791,7 +791,7 @@ Coupleur incendie,Documentation,Plans et schémas,APD,Schéma d'emprise,,,,,,,,
 Coupleur incendie,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Coupleur incendie,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Coupleur incendie,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Coupleur incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 – Fire Suppression
+Coupleur incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 - Fire Suppression
 Dalle,Classe et type IFC,,,,,,,Dalle multicouche (porteuse),IfcSlab.FLOOR,Floors,,
 Dalle,Classe et type IFC,,,,,,,Plancher (porteur),IfcSlab.FLOOR,Floors,,
 Dalle,Classe et type IFC,,,,,,,Dalle porteuse,IfcSlab.FLOOR,Floors,,
@@ -872,11 +872,11 @@ Dalle,Documentation,Plans et schémas,APD,Surcharges d’exploitation,,,,,,,,
 Dalle,Documentation,Plans et schémas,PDE,Surcharges d’exploitation,,,,,,,,
 Dalle,Documentation,Plans et schémas,EXE,Surcharges d’exploitation,,,,,,,,
 Dalle,Documentation,Plans et schémas,EXP,Surcharges d’exploitation,,,,,,,,
-Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,"B1010.20 – Floor Decks, Slabs, and Toppings"
-Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.30 – Balcony Floor Construction
-Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.40 – Mezzanine Floor Construction
-Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 – Flooring
-Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 – Ceiling Finishing
+Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,"B1010.20 - Floor Decks, Slabs, and Toppings"
+Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.30 - Balcony Floor Construction
+Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.40 - Mezzanine Floor Construction
+Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 - Flooring
+Dalle,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 - Ceiling Finishing
 Dalle sur sol,Classe et type IFC,,Toutes,,,,,Dalle sur sol multicouche (porteuse),IfcSlab.BASESLAB,Structural Foundations,,
 Dalle sur sol,Classe et type IFC,,Toutes,,,,,Dalle sur sol,IfcSlab.BASESLAB,Structural Foundations,,
 Dalle sur sol,Classe et type IFC,,Toutes,,,,,Dalle sur terre-plein,IfcSlab.BASESLAB,Structural Foundations,,
@@ -948,9 +948,9 @@ Dalle sur sol,Documentation,Plans et schémas,APD,Surcharges d’exploitation,,,
 Dalle sur sol,Documentation,Plans et schémas,PDE,Surcharges d’exploitation,,,,,,,,
 Dalle sur sol,Documentation,Plans et schémas,EXE,Surcharges d’exploitation,,,,,,,,
 Dalle sur sol,Documentation,Plans et schémas,EXP,Surcharges d’exploitation,,,,,,,,
-Dalle sur sol,Classification,,Toutes,,,,,,,,Uniformat II 2010,A4010 – Standard Slabs-on-Grade
-Dalle sur sol,Classification,,Toutes,,,,,,,,Uniformat II 2010,A4020 – Structural Slabs-on-Grade
-Dalle sur sol,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 Flooring
+Dalle sur sol,Classification,,Toutes,,,,,,,,Uniformat II 2010,A4010 - Standard Slabs-on-Grade
+Dalle sur sol,Classification,,Toutes,,,,,,,,Uniformat II 2010,A4020 - Structural Slabs-on-Grade
+Dalle sur sol,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 - Flooring
 Demande de réservation,Classe et type IFC,,Toutes,,,,,Demande de réservation,IfcBuildingElementProxy.USERDEFINED[PROVISIONFORVOID],Mass,,
 Dévidoir incendie,Classe et type IFC,,Toutes,,,,,Dévidoir incendie,IfcFireSuppressionTerminalType.HOSEREEL,Fire Protection,,
 Dévidoir incendie,Classe et type IFC,,Toutes,,,,,Robinet d'incendie armé,IfcFireSuppressionTerminalType.HOSEREEL,Fire Protection,,
@@ -1012,7 +1012,7 @@ Dévidoir incendie,Documentation,Plans et schémas,APD,Performances à atteindre
 Dévidoir incendie,Documentation,Plans et schémas,PDE,Performances à atteindre,,,,,,,,
 Dévidoir incendie,Documentation,Plans et schémas,EXE,Performances à atteindre,,,,,,,,
 Dévidoir incendie,Documentation,Plans et schémas,EXP,Performances à atteindre,,,,,,,,
-Dévidoir incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 – Fire Suppression
+Dévidoir incendie,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 - Fire Suppression
 Diffusion de chaleur - radiateu,Classe et type IFC,,Toutes,,,,,Radiateur à ailettes,IfcSpaceHeaterType.USERDEFINED[RADIATOR],Mechanical Equipment,,
 Diffusion de chaleur - radiateu,Classe et type IFC,,Toutes,,,,,Radiateur électrique,IfcSpaceHeaterType.USERDEFINED[RADIATOR],Mechanical Equipment,,
 Diffusion de chaleur - radiateu,Classe et type IFC,,Toutes,,,,,Radiateur à plaques,IfcSpaceHeaterType.USERDEFINED[RADIATOR],Mechanical Equipment,,
@@ -1065,7 +1065,7 @@ Diffusion de chaleur - radiateu,Documentation,Plans et schémas,APD,Rapport ener
 Diffusion de chaleur - radiateu,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Diffusion de chaleur - radiateu,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Diffusion de chaleur - radiateu,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Diffusion de chaleur - radiateu,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 – Decentralized Heating Equipment
+Diffusion de chaleur - radiateu,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 - Decentralized Heating Equipment
 Diffusion de chaleurfroid - con,Classe et type IFC,,Toutes,,,,,Plinthes chauffantes,IfcSpaceHeaterType.CONVECTOR,Mechanical Equipment,,
 Diffusion de chaleurfroid - con,Classe et type IFC,,Toutes,,,,,Tubes à ailettes,IfcSpaceHeaterType.CONVECTOR,Mechanical Equipment,,
 Diffusion de chaleurfroid - con,Classe et type IFC,,Toutes,,,,,Ventilo-convecteur,IfcSpaceHeaterType.CONVECTOR,Mechanical Equipment,,
@@ -1117,8 +1117,8 @@ Diffusion de chaleurfroid - con,Documentation,Plans et schémas,APD,Rapport ener
 Diffusion de chaleurfroid - con,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Diffusion de chaleurfroid - con,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Diffusion de chaleurfroid - con,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Diffusion de chaleurfroid - con,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 – Decentralized Heating Equipment
-Diffusion de chaleurfroid - con,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.70 Decentralized Cooling
+Diffusion de chaleurfroid - con,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 - Decentralized Heating Equipment
+Diffusion de chaleurfroid - con,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.70 - Decentralized Cooling
 Diffusion de chaleurfroid - sur,Classe et type IFC,,Toutes,,,,,Chauffage sol à eau,IfcCoilType.WATERHEATINGCOIL,Mechanical Equipment,,
 Diffusion de chaleurfroid - sur,Classe et type IFC,,Toutes,,,,,Refroidissement sol à eau,IfcCoilType.WATERCOOLINGCOIL,Mechanical Equipment,,
 Diffusion de chaleurfroid - sur,Classe et type IFC,,Toutes,,,,,Chauffage/refroidissement sol à eau,IfcCoilType.HYDRONICCOIL,Mechanical Equipment,,
@@ -1176,8 +1176,8 @@ Diffusion de chaleurfroid - sur,Documentation,Plans et schémas,APD,Rapport ener
 Diffusion de chaleurfroid - sur,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Diffusion de chaleurfroid - sur,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Diffusion de chaleurfroid - sur,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Diffusion de chaleurfroid - sur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.70 Decentralized Cooling
-Diffusion de chaleurfroid - sur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 – Decentralized Heating Equipment
+Diffusion de chaleurfroid - sur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.70 - Decentralized Cooling
+Diffusion de chaleurfroid - sur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 - Decentralized Heating Equipment
 Echangeur air-air,Classe et type IFC,,Toutes,,,,,Echangeur à plaque à contre courant,IfcAirToAirHeatRecoveryType.FIXEDPLATECOUNTERFLOWEXCHANGER,Mechanical Equipment,,
 Echangeur air-air,Classe et type IFC,,Toutes,,,,,Echangeur à plaque flux croisé,IfcAirToAirHeatRecoveryType.FIXEDPLATECROSSFLOWEXCHANGER,Mechanical Equipment,,
 Echangeur air-air,Classe et type IFC,,Toutes,,,,,Echangeur à plaque flux parallèle,IfcAirToAirHeatRecoveryType.FIXEDPLATEPARALLELFLOWEXCHANGER,Mechanical Equipment,,
@@ -1233,7 +1233,7 @@ Echangeur air-air,Documentation,Plans et schémas,APD,Rapport energétique,,,,,,
 Echangeur air-air,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Echangeur air-air,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Echangeur air-air,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Echangeur air-air,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.60 – Air-to-Air Energy Recovery
+Echangeur air-air,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.60 - Air-to-Air Energy Recovery
 Elément de charpente linéaire,Classe et type IFC,,Toutes,,,,,Solive de plancher,IfcMember.USERDEFINED[JOIST],Structural Framing,,
 Elément de charpente linéaire,Classe et type IFC,,Toutes,,,,,Elément vertical ossature bois,IfcMember.STUD,Structural Framing,,
 Elément de charpente linéaire,Classe et type IFC,,Toutes,,,,,Lisse horizontale ossature bois,IfcMember.PLATE,Structural Framing,,
@@ -1293,12 +1293,12 @@ Elément de charpente linéaire,Documentation,Plans et schémas,PDE,Rapport ener
 Elément de charpente linéaire,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Elément de charpente linéaire,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
 Elément de charpente linéaire,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.10 – Floor Structural Frame
-Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020.10 – Roof Structural Frame
-Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.20 – Exterior Wall Construction
-Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 – Exterior Ceiling
-Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1010 – Interior Partition
-Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020.40 – Metal Building Systems
+Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.10 - Floor Structural Frame
+Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020.10 - Roof Structural Frame
+Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.20 - Exterior Wall Construction
+Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 - Exterior Ceiling
+Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1010 - Interior Partition
+Elément de charpente linéaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020.40 - Metal Building Systems
 Equipement de protection électr,Classe et type IFC,,Toutes,,,,,Fusible,IfcProtectiveDeviceType.FUSEDISCONNECTOR,Electrical Fixtures,,
 Equipement de protection électr,Classe et type IFC,,Toutes,,,,,Disjoncteur général,IfcProtectiveDeviceType.CIRCUITBREAKER,Electrical Fixtures,,
 Equipement de protection électr,Classe et type IFC,,Toutes,,,,,Disjoncteur divisionnaire,IfcProtectiveDeviceType.CIRCUITBREAKER,Electrical Fixtures,,
@@ -1340,9 +1340,9 @@ Equipement de protection électr,Documentation,Maintenance et fiches techniques,
 Equipement de protection électr,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Equipement de protection électr,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Equipement de protection électr,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Equipement de protection électr,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 – Electrical Service
-Equipement de protection électr,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.10 – Lightning Protection
-Equipement de protection électr,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4010.50 – Electrical Switchgear and Protection Devices
+Equipement de protection électr,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 - Electrical Service
+Equipement de protection électr,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.10 - Lightning Protection
+Equipement de protection électr,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4010.50 - Electrical Switchgear and Protection Devices
 Equipement de transport (hors a,Classe et type IFC,,Toutes,,,,,Ascenseur d'escalier,IfcTransportElement.USERDEFINED[STAIR_LIFT],Vertical Circulation,,
 Equipement de transport (hors a,Classe et type IFC,,Toutes,,,,,Monte-charge,IfcTransportElement.ELEVATOR,Vertical Circulation,,
 Equipement de transport (hors a,Classe et type IFC,,Toutes,,,,,Derrick (mât de charge),IfcTransportElement.USERDEFINED[LIFTINGGEAR],Vertical Circulation,,
@@ -1404,20 +1404,20 @@ Equipement de transport (hors a,Documentation,Plans et schémas,APD,Schéma d'em
 Equipement de transport (hors a,Documentation,Plans et schémas,PDE,Détail d'exécution,,,,,,,,
 Equipement de transport (hors a,Documentation,Plans et schémas,EXE,Détail d'exécution,,,,,,,,
 Equipement de transport (hors a,Documentation,Plans et schémas,EXP,Détail d'exécution,,,,,,,,
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.70 – Pneumatic Tube Systems
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.20 – Lifts
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.30 – Escalators
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.50 – Dumbwaiters
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.10 – Movingwalkway
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.30 – Turntables
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.50 – Passenger Loading Bridges
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.70 – People Movers (monorail-funicular-cable transportation)
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.10 – Cranes
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.20 – Hoists
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.30 – Derricks
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.40 – Conveyors
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.50 – Baggage Handling Equipement
-Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D1050.60 – Chutes (coal chutes, escape chutes, laundry an linen chutes)"
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.70 - Pneumatic Tube Systems
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.20 - Lifts
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.30 - Escalators
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1010.50 - Dumbwaiters
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.10 - Movingwalkway
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.30 - Turntables
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.50 - Passenger Loading Bridges
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1030.70 - People Movers (monorail-funicular-cable transportation)
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.10 - Cranes
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.20 - Hoists
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.30 - Derricks
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.40 - Conveyors
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,D1050.50 - Baggage Handling Equipement
+Equipement de transport (hors a,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D1050.60 - Chutes (coal chutes, escape chutes, laundry an linen chutes)"
 Equipement sanitaire,Classe et type IFC,,Toutes,,,,,Bain,IfcSanitaryTerminalType.BATH,Plumbing Fixtures,,
 Equipement sanitaire,Classe et type IFC,,Toutes,,,,,Baignoire,IfcSanitaryTerminalType.BATH,Plumbing Fixtures,,
 Equipement sanitaire,Classe et type IFC,,Toutes,,,,,Bidet,IfcSanitaryTerminalType.BIDET,Plumbing Fixtures,,
@@ -1476,7 +1476,7 @@ Equipement sanitaire,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,
 Equipement sanitaire,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Equipement sanitaire,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Equipement sanitaire,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Equipement sanitaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.60 – Plumbing Fixtures
+Equipement sanitaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.60 - Plumbing Fixtures
 Escalier (béton),Classe et type IFC,,Toutes,,,,,Escalier (béton),IfcStair.USERDEFINED[CONCRETE],Stairs,,
 Escalier (béton),Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),Pset_StairCommon.Status,-,,,,,
 Escalier (béton),Informations alphanumériques,Niveau objet,PDE,,Statut de rénovation (Archicad),Pset_StairCommon.Status,-,,,,,
@@ -1527,9 +1527,9 @@ Escalier (béton),Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,
 Escalier (béton),Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Escalier (béton),Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
 Escalier (béton),Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Escalier (béton),Classification,,Toutes,,,,,,,,Uniformat II 2010,B1080.10 – Stair Construction
-Escalier (béton),Classification,,Toutes,,,,,,,,Uniformat II 2010,C2040 – Stair Finishing
-Escalier (béton),Classification,,Toutes,,,,,,,,Uniformat II 2010,E1060.50 – Residential Stairs
+Escalier (béton),Classification,,Toutes,,,,,,,,Uniformat II 2010,B1080.10 - Stair Construction
+Escalier (béton),Classification,,Toutes,,,,,,,,Uniformat II 2010,C2040 - Stair Finishing
+Escalier (béton),Classification,,Toutes,,,,,,,,Uniformat II 2010,E1060.50 - Residential Stairs
 Escalier (pas béton),Classe et type IFC,,Toutes,,,,,Escalier (pas béton),IfcStair.USERDEFINED[NOTCONCRETE],Stairs,,
 Escalier (pas béton),Informations alphanumériques,Niveau objet,APS,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
 Escalier (pas béton),Informations alphanumériques,Niveau objet,APD,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -1660,7 +1660,7 @@ Extincteur,Documentation,Maintenance et fiches techniques,EXP,Notice de maintena
 Extincteur,Documentation,Maintenance et fiches techniques,EXE,Carnet d'entretien,,,,,,,,
 Extincteur,Documentation,Maintenance et fiches techniques,EXP,Carnet d'entretien,,,,,,,,
 Extincteur,Documentation,Plans et schémas,APD,Schéma d'emprise,,,,,,,,
-Extincteur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4030.30 – Fire Extinguishers
+Extincteur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4030.30 - Fire Extinguishers
 Faux-plafond,Classe et type IFC,,Toutes,,,,,Faux-plafond,IfcCovering.USERDEFINED[SUSPENDED_CEILING],Ceilings,,
 Faux-plafond,Classe et type IFC,,Toutes,,,,,Plafond suspendu,IfcCovering.USERDEFINED[SUSPENDED_CEILING],Ceilings,,
 Faux-plafond,Classe et type IFC,,Toutes,,,,,Retombée de faux plafond,IfcCovering.USERDEFINED[SUSPENDED_CEILING],Ceilings,,
@@ -1701,11 +1701,9 @@ Faux-plafond,Documentation,Descriptifs,EXE,Prescriptions,,,,,,,,
 Faux-plafond,Documentation,Maintenance et fiches techniques,EXE,Fiche technique,,,,,,,,
 Faux-plafond,Documentation,Maintenance et fiches techniques,EXP,Fiche technique,,,,,,,,
 Faux-plafond,Documentation,Maintenance et fiches techniques,EXE,Déclaration de performance environnementale,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-Faux-plafond,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 – Exterior Ceiling
-Faux-plafond,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1070 – Suspended Ceiling Construction
-Faux-plafond,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 – Ceiling Finishing
+Faux-plafond,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 - Exterior Ceiling
+Faux-plafond,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1070 - Suspended Ceiling Construction
+Faux-plafond,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 - Ceiling Finishing
 Fenêtre,Classe et type IFC,,Toutes,,,,,Fenêtre,IfcWindow,Windows,,
 Fenêtre,Classe et type IFC,,Toutes,,,,,Lanterneau,IfcWindow,Windows,,
 Fenêtre,Classe et type IFC,,Toutes,,,,,Coupole,IfcWindow,Windows,,
@@ -1760,9 +1758,9 @@ Fenêtre,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Fenêtre,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Fenêtre,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
 Fenêtre,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Fenêtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2020 – Exterior Windows
-Fenêtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3060.10 – Roof Windows and Skylights
-Fenêtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1020 – Interior Windows
+Fenêtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2020 - Exterior Windows
+Fenêtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3060.10 - Roof Windows and Skylights
+Fenêtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1020 - Interior Windows
 Filtre,Classe et type IFC,,Toutes,,,,,"Filtre à air (G4, F7,etc.)",IfcFilterType.AIRPARTICLEFILTER,Mechanical Equipment,,
 Filtre,Classe et type IFC,,Toutes,,,,,Filtre HEPA,IfcFilterType.AIRPARTICLEFILTER,Mechanical Equipment,,
 Filtre,Classe et type IFC,,Toutes,,,,,Filtre électrostatique,IfcFilterType.AIRPARTICLEFILTER,Mechanical Equipment,,
@@ -1806,7 +1804,7 @@ Filtre,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Filtre,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Filtre,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Filtre,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Filtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.70 – HVAC Air Cleaning
+Filtre,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.70 - HVAC Air Cleaning
 Fondation profonde,Classe et type IFC,,Toutes,,,,,Faux-puits,IfcPile.SUPPORT,Structural Foundations,,
 Fondation profonde,Classe et type IFC,,Toutes,,,,,Pieu battu,IfcPile.USERDEFINED[DRIVEN],Structural Foundations,,
 Fondation profonde,Classe et type IFC,,Toutes,,,,,Pieu foré,IfcPile.USERDEFINED[BORED],Structural Foundations,,
@@ -1871,8 +1869,8 @@ Fondation profonde,Documentation,Plans et schémas,PDE,Rapport stabilité,,,,,,,
 Fondation profonde,Documentation,Plans et schémas,EXE,Rapport stabilité,,,,,,,,
 Fondation profonde,Documentation,Plans et schémas,EXP,Rapport stabilité,,,,,,,,
 Fondation profonde,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Fondation profonde,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.10 – Driven Piles
-Fondation profonde,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.15 – Bored Piles
+Fondation profonde,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.10 - Driven Piles
+Fondation profonde,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.15 - Bored Piles
 Gaine de ventilation,Classe et type IFC,,Toutes,,,,,Conduit rigide,IfcDuctSegmentType.RIGIDSEGMENT,Ducts,,
 Gaine de ventilation,Classe et type IFC,,Toutes,,,,,Conduit souple,IfcDuctSegmentType.FLEXIBLESEGMENT,Flex Ducts,,
 Gaine de ventilation,Informations alphanumériques,Niveau objet,APD,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -1921,8 +1919,8 @@ Gaine de ventilation,Documentation,Plans et schémas,APD,Rapport energétique,,,
 Gaine de ventilation,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Gaine de ventilation,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Gaine de ventilation,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 – HVAC Air Distribution Systems
-Gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060 – Ventilation
+Gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 - HVAC Air Distribution Systems
+Gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060 - Ventilation
 Garde-corps,Classe et type IFC,,Toutes,,,,,Garde-corps obliques (escalier/rampe),IfcRailing.GUARDRAIL,Railings,,
 Garde-corps,Classe et type IFC,,Toutes,,,,,Garde-corps horizontal,IfcRailing.BALUSTRADE,Railings,,
 Garde-corps,Classe et type IFC,,Toutes,,,,,Balustrade,IfcRailing.BALUSTRADE,Railings,,
@@ -1964,12 +1962,12 @@ Garde-corps,Documentation,Maintenance et fiches techniques,EXP,Fiche technique,,
 Garde-corps,Documentation,Plans et schémas,PDE,Détail d'exécution,,,,,,,,
 Garde-corps,Documentation,Plans et schémas,EXE,Détail d'exécution,,,,,,,,
 Garde-corps,Documentation,Plans et schémas,EXP,Détail d'exécution,,,,,,,,
-Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1080.50 Stair railings
-Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,"B2080.50 Railings, exterior balcony"
-Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1090.10 Interior railings and handrails
-Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2030.30 Exterior steps and ramps
-Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.20 Fences and gates
-Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1010.70 Modular mezzanines
+Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1080.50 - Stair railings
+Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,"B2080.50 - Railings, exterior balcony"
+Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1090.10 - Interior railings and handrails
+Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2030.30 - Exterior steps and ramps
+Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.20 - Fences and gates
+Garde-corps,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1010.70 - Modular mezzanines
 Générateur électrique,Classe et type IFC,,Toutes,,,,,Cogénérateur,IfcElectricGeneratorType.USERDEFINED[CHP],Electrical Equipment,,
 Générateur électrique,Classe et type IFC,,Toutes,,,,,Groupe électrogène,IfcElectricGeneratorType.USERDEFINED[ENGINGENERATOR],Electrical Equipment,,
 Générateur électrique,Classe et type IFC,,Toutes,,,,,Groupe électrogène de sécurité,IfcElectricGeneratorType.USERDEFINED[ENGINGENERATOR],Electrical Equipment,,
@@ -2025,7 +2023,7 @@ Générateur électrique,Documentation,Plans et schémas,APD,Rapport energétiqu
 Générateur électrique,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Générateur électrique,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Générateur électrique,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Générateur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5010.90 – Facility Power Generation Supplementary Components
+Générateur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5010.90 - Facility Power Generation Supplementary Components
 Interrupteur électrique,Classe et type IFC,,Toutes,,,,,Interrupteur unipolaire,IfcSwitchingDeviceType.CONTACTOR,Lighting Devices,,
 Interrupteur électrique,Classe et type IFC,,Toutes,,,,,Commutateur unipolaire,IfcSwitchingDeviceType.CONTACTOR,Lighting Devices,,
 Interrupteur électrique,Classe et type IFC,,Toutes,,,,,Interrupteur unipolaire va-et-vient,IfcSwitchingDeviceType.CONTACTOR,Lighting Devices,,
@@ -2071,9 +2069,9 @@ Interrupteur électrique,Documentation,Maintenance et fiches techniques,EXP,Carn
 Interrupteur électrique,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Interrupteur électrique,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Interrupteur électrique,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Interrupteur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 – Electrical Service
-Interrupteur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.50 – Wiring Devices
-Interrupteur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.10 Lighting control
+Interrupteur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 - Electrical Service
+Interrupteur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.50 - Wiring Devices
+Interrupteur électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.10 - Lighting control
 Longrine de fondation,Classe et type IFC,,Toutes,,,,,Longrine de fondation,IfcFooting.FOOTING_BEAM,Structural Framing,,
 Longrine de fondation,Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),ePset_FootingCommon.Status,-,,,,,
 Longrine de fondation,Informations alphanumériques,Niveau objet,PDE,,Statut de rénovation (Archicad),ePset_FootingCommon.Status,-,,,,,
@@ -2133,7 +2131,7 @@ Longrine de fondation,Documentation,Plans et schémas,APD,Surcharges d’exploit
 Longrine de fondation,Documentation,Plans et schémas,PDE,Surcharges d’exploitation,,,,,,,,
 Longrine de fondation,Documentation,Plans et schémas,EXE,Surcharges d’exploitation,,,,,,,,
 Longrine de fondation,Documentation,Plans et schémas,EXP,Surcharges d’exploitation,,,,,,,,
-Longrine de fondation,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.80 – Grade Beams
+Longrine de fondation,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.80 - Grade Beams
 Luminaire,Classe et type IFC,,Toutes,,,,,Luminaire éclairage à faisceau,IfcLightFixtureType.POINTSOURCE,Lighting Fixtures,,
 Luminaire,Classe et type IFC,,Toutes,,,,,Luminaire éclairage multidirection,IfcLightFixtureType.DIRECTIONSOURCE,Lighting Fixtures,,
 Luminaire,Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),ePset_LightFixtureTypeCommon.Status,-,,,,,
@@ -2173,7 +2171,7 @@ Luminaire,Documentation,Maintenance et fiches techniques,EXP,Carnet d'entretien,
 Luminaire,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Luminaire,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Luminaire,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Luminaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.50 – Lighting Fixtures
+Luminaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.50 - Lighting Fixtures
 Luminaire sécurité,Classe et type IFC,,Toutes,,,,,Eclairage sécurité,IfcLightFixtureType.USERDEFINED[SECURITYLIGHTING],Lighting Fixtures,,
 Luminaire sécurité,Classe et type IFC,,Toutes,,,,,Bloc sortie de secours,IfcLightFixtureType.USERDEFINED[SECURITYLIGHTING],Lighting Fixtures,,
 Luminaire sécurité,Informations alphanumériques,Niveau objet,APD,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -2210,7 +2208,7 @@ Luminaire sécurité,Documentation,Maintenance et fiches techniques,EXP,Carnet d
 Luminaire sécurité,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Luminaire sécurité,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Luminaire sécurité,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Luminaire sécurité,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.50 – Lighting Fixtures
+Luminaire sécurité,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.50 - Lighting Fixtures
 Mobilier,Classe et type IFC,,Toutes,,,,,Chaise,IfcFurnishingElement,Furniture,,
 Mobilier,Classe et type IFC,,Toutes,,,,,Table,IfcFurnishingElement,Furniture,,
 Mobilier,Classe et type IFC,,Toutes,,,,,Bureau,IfcFurnishingElement,Furniture,,
@@ -2262,8 +2260,8 @@ Mobilier,Documentation,Maintenance et fiches techniques,EXP,Notice de maintenanc
 Mobilier,Documentation,Maintenance et fiches techniques,EXE,Carnet d'entretien,,,,,,,,
 Mobilier,Documentation,Maintenance et fiches techniques,EXP,Carnet d'entretien,,,,,,,,
 Mobilier,Documentation,Maintenance et fiches techniques,EXE,Déclaration de performance environnementale,,,,,,,,
-Mobilier,Classification,,Toutes,,,,,,,,Uniformat II 2010,E2010 – Fixed Furnishings
-Mobilier,Classification,,Toutes,,,,,,,,Uniformat II 2010,E2050 – Movable Furnishings
+Mobilier,Classification,,Toutes,,,,,,,,Uniformat II 2010,E2010 - Fixed Furnishings
+Mobilier,Classification,,Toutes,,,,,,,,Uniformat II 2010,E2050 - Movable Furnishings
 Mur,Classe et type IFC,,Toutes,,,,,Mur multicouche,IfcWall.USERDEFINED[SOLIDWALL],Walls,,
 Mur,Classe et type IFC,,Toutes,,,,,Mur de façade (porteur),IfcWall.USERDEFINED[SOLIDWALL],Walls,,
 Mur,Classe et type IFC,,Toutes,,,,,Mur intérieur (porteur),IfcWall.USERDEFINED[SOLIDWALL],Walls,,
@@ -2368,16 +2366,16 @@ Mur,Documentation,Plans et schémas,PDE,Rapport stabilité,,,,,,,,
 Mur,Documentation,Plans et schémas,EXE,Rapport stabilité,,,,,,,,
 Mur,Documentation,Plans et schémas,EXP,Rapport stabilité,,,,,,,,
 Mur,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1010.10 – Wall Foundations (Foundation walls)
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.30 Special Foundation Walls
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,A2010 Walls for Subgrade Enclosures
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1010.10 - Wall Foundations (Foundation walls)
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1020.30 - Special Foundation Walls
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,A2010 - Walls for Subgrade Enclosures
 Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,A4030 - Slab Trenches
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010 Exterior Walls
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2080.50 – Exterior Balcony Walls and Railings
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2090 – Exterior Wall Specialties
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1010 – Partitions
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2010 – Wall Finishes
-Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020 – Special Structure
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010 - Exterior Walls
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2080.50 - Exterior Balcony Walls and Railings
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2090 - Exterior Wall Specialties
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1010 - Partitions
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2010 - Wall Finishes
+Mur,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020 - Special Structure
 Mur rideau,Classe et type IFC,,Toutes,,,,,Mur rideau,IfcCurtainWall.NOTDEFINED,Walls,,
 Mur rideau,Classe et type IFC,,Toutes,,,,,Verrière,IfcCurtainWall.NOTDEFINED,Walls,,
 Mur rideau,Classe et type IFC,,Toutes,,,,,Veranda,IfcCurtainWall.NOTDEFINED,Walls,,
@@ -2433,7 +2431,7 @@ Mur rideau,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Mur rideau,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Mur rideau,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
 Mur rideau,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Mur rideau,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.40 – Fabricated Exterior Walls Assemblies
+Mur rideau,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.40 - Fabricated Exterior Walls Assemblies
 Ouverture,Classe et type IFC,,Toutes,,,,,Ouverture pour techniques,IfcOpeningElement,Mass,,
 Ouverture,Classe et type IFC,,Toutes,,,,,Percement,IfcOpeningElement,Mass,,
 Ouverture,Classe et type IFC,,Toutes,,,,,Niche pour techniques,IfcOpeningElement,Mass,,
@@ -2505,18 +2503,18 @@ Panneau de gestion,Documentation,Maintenance et fiches techniques,EXP,Carnet d'e
 Panneau de gestion,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Panneau de gestion,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Panneau de gestion,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.10 – Integrated Automation Control of Equipmentnents
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.20 – Integrated Automation Control of Conveying
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.10 - Integrated Automation Control of Equipmentnents
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.20 - Integrated Automation Control of Conveying
 Equipment"
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.30 – Integrated Automation Control of Fire-Suppression
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.30 - Integrated Automation Control of Fire-Suppression
 Systems"
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.40 – Integrated Automation Control of Plumbing Systems
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.50 – Integrated Automation Control of HVAC Systems
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.60 – Integrated Automation Control of Electrical Systems
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.70 – Integrated Automation Control of Communication Systems
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.80 – Integrated Automation Control of Electronic Safety
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.40 - Integrated Automation Control of Plumbing Systems
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.50 - Integrated Automation Control of HVAC Systems
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.60 - Integrated Automation Control of Electrical Systems
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.70 - Integrated Automation Control of Communication Systems
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D8010.80 - Integrated Automation Control of Electronic Safety
 and Security Systems"
-Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.90 – Integrated Automation Supplementary Components
+Panneau de gestion,Classification,,Toutes,,,,,,,,Uniformat II 2010,D8010.90 - Integrated Automation Supplementary Components
 Panneau solaire,Classe et type IFC,,Toutes,,,,,Panneau solaire,IfcEnergyConversionDevice,Mechanical Equipment,,
 Panneau solaire,Classe et type IFC,,Toutes,,,,,Capteur solaire thermique,IfcEnergyConversionDevice,Mechanical Equipment,,
 Panneau solaire,Classe et type IFC,,Toutes,,,,,Collecteur solaire,IfcEnergyConversionDevice,Mechanical Equipment,,
@@ -2576,8 +2574,8 @@ Panneau solaire,Documentation,Plans et schémas,APD,Rapport energétique,,,,,,,,
 Panneau solaire,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Panneau solaire,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Panneau solaire,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Panneau solaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 – Heat Generation
-Panneau solaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5010.30 – Photovoltaic Collectors
+Panneau solaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 - Heat Generation
+Panneau solaire,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5010.30 - Photovoltaic Collectors
 Parachèvement des murs,Classe et type IFC,,Toutes,,,,,"Bardage (métallique, cassette, pierre,etc.)",IfcCovering.CLADDING,Walls,,
 Parachèvement des murs,Classe et type IFC,,Toutes,,,,,"Enduit (plâtre, argile, chaux, ciment,etc.)",IfcCovering.CLADDING,Walls,,
 Parachèvement des murs,Classe et type IFC,,Toutes,,,,,"Revêtement en pierre (marbre, granit,etc.)",IfcCovering.CLADDING,Walls,,
@@ -2642,8 +2640,8 @@ Parachèvement des murs,Documentation,Plans et schémas,PDE,Plan éléments spé
 Parachèvement des murs,Documentation,Plans et schémas,EXE,Plan éléments spécifiques,,,,,,,,
 Parachèvement des murs,Documentation,Plans et schémas,EXP,Plan éléments spécifiques,,,,,,,,
 Parachèvement des murs,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Parachèvement des murs,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.10 Exterior Wall Veneer
-Parachèvement des murs,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2010 – Wall finishing
+Parachèvement des murs,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.10 - Exterior Wall Veneer
+Parachèvement des murs,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2010 - Wall finishing
 Parachèvement des plafonds,Classe et type IFC,,Toutes,,,,,Finition de plafond,IfcCovering.CEILING,Ceilings,,
 Parachèvement des plafonds,Classe et type IFC,,Toutes,,,,,Plaque de plâtre,IfcCovering.CEILING,Ceilings,,
 Parachèvement des plafonds,Classe et type IFC,,Toutes,,,,,Carrelage,IfcCovering.CEILING,Ceilings,,
@@ -2709,7 +2707,7 @@ Parachèvement des plafonds,Documentation,Plans et schémas,PDE,,Rapport energé
 Parachèvement des plafonds,Documentation,Plans et schémas,EXE,,Rapport energétique,,,,,,,
 Parachèvement des plafonds,Documentation,Plans et schémas,EXP,,Rapport energétique,,,,,,,
 Parachèvement des plafonds,Documentation,Plans et schémas,EXE,,Déclaration de performance environnementale,,,,,,,
-Parachèvement des plafonds,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 – Ceiling finishing
+Parachèvement des plafonds,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 - Ceiling finishing
 Parachèvement des sols,Classe et type IFC,,Toutes,,,,,Dalle sur plot,IfcCovering.FLOORING,Floors,,
 Parachèvement des sols,Classe et type IFC,,Toutes,,,,,Linoléum,IfcCovering.FLOORING,Floors,,
 Parachèvement des sols,Classe et type IFC,,Toutes,,,,,Revêtement en pierre,IfcCovering.FLOORING,Floors,,
@@ -2795,8 +2793,8 @@ Parachèvement des sols,Documentation,Plans et schémas,APD,Surcharges d’explo
 Parachèvement des sols,Documentation,Plans et schémas,PDE,Surcharges d’exploitation,,,,,,,,
 Parachèvement des sols,Documentation,Plans et schémas,EXE,Surcharges d’exploitation,,,,,,,,
 Parachèvement des sols,Documentation,Plans et schémas,EXP,Surcharges d’exploitation,,,,,,,,
-Parachèvement des sols,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2040 – Stair finishing
-Parachèvement des sols,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 – Flooring
+Parachèvement des sols,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2040 - Stair finishing
+Parachèvement des sols,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 - Flooring
 Parachèvement des toits,Classe et type IFC,,Toutes,,,,,"Revêtement en pierre (marbre, granit,etc.)",IfcCovering.ROOFING,Roofs,,
 Parachèvement des toits,Classe et type IFC,,Toutes,,,,,"Bardage (métallique, cassette, pierre,etc.)",IfcCovering.ROOFING,Roofs,,
 Parachèvement des toits,Classe et type IFC,,Toutes,,,,,"Couverture (ardoise, tuile, zinc,etc.)",IfcCovering.ROOFING,Roofs,,
@@ -2865,7 +2863,7 @@ Parachèvement des toits,Documentation,Plans et schémas,PDE,Rapport energétiqu
 Parachèvement des toits,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Parachèvement des toits,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
 Parachèvement des toits,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Parachèvement des toits,Classification,,Toutes,,,,,,,,Uniformat II 2010,"B1020.20 – Roof deck, slab and sheathing"
+Parachèvement des toits,Classification,,Toutes,,,,,,,,Uniformat II 2010,"B1020.20 - Roof deck, slab and sheathing"
 Plancher technique,Classe et type IFC,,Toutes,,,,,Plancher technique,IfcCovering.USERDEFINED[TECHNICAL_FLOOR],Floors,,
 Plancher technique,Classe et type IFC,,Toutes,,,,,Faux-plancher,IfcCovering.USERDEFINED[TECHNICAL_FLOOR],Floors,,
 Plancher technique,Classe et type IFC,,Toutes,,,,,Plancher surélevé,IfcCovering.USERDEFINED[TECHNICAL_FLOOR],Floors,,
@@ -2914,8 +2912,8 @@ Plancher technique,Documentation,Plans et schémas,APD,Surcharges d’exploitati
 Plancher technique,Documentation,Plans et schémas,PDE,Surcharges d’exploitation,,,,,,,,
 Plancher technique,Documentation,Plans et schémas,EXE,Surcharges d’exploitation,,,,,,,,
 Plancher technique,Documentation,Plans et schémas,EXP,Surcharges d’exploitation,,,,,,,,
-Plancher technique,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1060.10 – Access Flooring
-Plancher technique,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 – Flooring
+Plancher technique,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1060.10 - Access Flooring
+Plancher technique,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2030 - Flooring
 Pompe,Classe et type IFC,,Toutes,,,,,Pompe générique,IfcPumpType.USERDEFINED[GENERIC],Mechanical Equipment,,
 Pompe,Classe et type IFC,,Toutes,,,,,Circulateur,IfcPumpType.CIRCULATOR,Mechanical Equipment,,
 Pompe,Classe et type IFC,,Toutes,,,,,Pompe à mazout,IfcPumpType.USERDEFINED[OILPUMP],Mechanical Equipment,,
@@ -2969,27 +2967,27 @@ Pompe,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Pompe,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Pompe,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Pompe,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.20 Domestic Water Equipement
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.40 – Domestic Water Piping
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.10 – Sanitary Sewerage Equipement
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.10 – Stormwater Drainage Equipement
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.30 – Fuel Pump
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 – Heat Generation (Boiler feedwater Pumps)
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 Facility Hydronic Distribution
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 Facility Steam Distribution
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.10 Fire Suppression
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.10 – Pools
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.20 – Interior Fountains
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.10 – Exterior Foutains
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2080.10 – Planting Irrigation
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 Site Domestic Water Distribution
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 Site Fire Protection Water Distribution
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 – Site Irrigation Water Distribution
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.40 Utility Septic Tank
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.50 – Storm Drainage Pumps
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050.10 – Site Hydronic Heating Distribution
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050.40 – Site Hydronic Cooling Distribution
-Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 – Site Fuel Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.20 - Domestic Water Equipement
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.40 - Domestic Water Piping
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.10 - Sanitary Sewerage Equipement
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.10 - Stormwater Drainage Equipement
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.30 - Fuel Pump
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 - Heat Generation (Boiler feedwater Pumps)
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 - Facility Hydronic Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 - Facility Steam Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.10 - Fire Suppression
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.10 - Pools
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.20 - Interior Fountains
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.10 - Exterior Foutains
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2080.10 - Planting Irrigation
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 - Site Domestic Water Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 - Site Fire Protection Water Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 - Site Irrigation Water Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.40 - Utility Septic Tank
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.50 - Storm Drainage Pumps
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050.10 - Site Hydronic Heating Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050.40 - Site Hydronic Cooling Distribution
+Pompe,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 - Site Fuel Distribution
 Porte,Classe et type IFC,,Toutes,,,,,Porte,IfcDoor,Doors,,
 Porte,Classe et type IFC,,Toutes,,,,,Portail,IfcDoor,Doors,,
 Porte,Classe et type IFC,,Toutes,,,,,Grille,IfcDoor,Doors,,
@@ -3050,11 +3048,11 @@ Porte,Documentation,Plans et schémas,EXE,Déclaration de performance environnem
 Porte,Documentation,Plans et schémas,PDE,Nomenclature des portes,,,,,,,,
 Porte,Documentation,Plans et schémas,EXE,Nomenclature des portes,,,,,,,,
 Porte,Documentation,Plans et schémas,EXP,Nomenclature des portes,,,,,,,,
-Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2050 – Exterior Doors and Grilles
-Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3060.50 – Vents and Hatches
-Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1030 – Interior Doors
+Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2050 - Exterior Doors and Grilles
+Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3060.50 - Vents and Hatches
+Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1030 - Interior Doors
 Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1040 - Interior Grilles and Gates
-Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1090.35 – Wall and Door Protection
+Porte,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1090.35 - Wall and Door Protection
 Poutre,Classe et type IFC,,Toutes,,,,,Poutrelle métallique,IfcBeam.BEAM,Structural Framing,,
 Poutre,Classe et type IFC,,Toutes,,,,,Poutre de ceinture,IfcBeam.USERDEFINED[RING_BEAM],Structural Framing,,
 Poutre,Classe et type IFC,,Toutes,,,,,Poutre de chaînage,IfcBeam.USERDEFINED[RING_BEAM],Structural Framing,,
@@ -3125,12 +3123,12 @@ Poutre,Documentation,Plans et schémas,APD,Surcharges d’exploitation,,,,,,,,
 Poutre,Documentation,Plans et schémas,PDE,Surcharges d’exploitation,,,,,,,,
 Poutre,Documentation,Plans et schémas,EXE,Surcharges d’exploitation,,,,,,,,
 Poutre,Documentation,Plans et schémas,EXP,Surcharges d’exploitation,,,,,,,,
-Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.10 – Floor Structural Frame
-Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020.10 – Roof Structural Frame
-Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.20 – Exterior Wall Construction
-Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 – Exterior Ceiling
-Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1010 – Interior Partition
-Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020.40 – Metal Building Systems
+Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.10 - Floor Structural Frame
+Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020.10 - Roof Structural Frame
+Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2010.20 - Exterior Wall Construction
+Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080.10 - Exterior Ceiling
+Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,C1010 - Interior Partition
+Poutre,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020.40 - Metal Building Systems
 Poutre,Classification,,Toutes,,,,,"Prise électrique (monophasée, triphasée,etc.)",IfcOutletType.POWEROUTLET,Electrical Fixtures,,
 Prise électrique,Classe et type IFC,,Toutes,,,,,"Prise data (RJ45,etc.)",IfcOutletType.USERDEFINED[DATAOUTLET],Electrical Fixtures,,
 Prise électrique,Classe et type IFC,,Toutes,,,,,"Prise téléphonique (RJ11,etc.)",IfcOutletType.USERDEFINED[TELEPHONEOUTLET],Electrical Fixtures,,
@@ -3164,9 +3162,9 @@ Prise électrique,Documentation,Maintenance et fiches techniques,EXP,Carnet d'en
 Prise électrique,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Prise électrique,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Prise électrique,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Prise électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.50 – Wiring Devices
-Prise électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6010.10 – Data Communications Network Equipment
-Prise électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6030.10 – Audio-Video Systems
+Prise électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.50 - Wiring Devices
+Prise électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6010.10 - Data Communications Network Equipment
+Prise électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6030.10 - Audio-Video Systems
 Production de chaleur - eau,Classe et type IFC,,Toutes,,,,,Ballon thermodynamique,IfcBoilerType.WATER,Mechanical Equipment,,
 Production de chaleur - eau,Classe et type IFC,,Toutes,,,,,Chauffe-eau,IfcBoilerType.WATER,Mechanical Equipment,,
 Production de chaleur - eau,Classe et type IFC,,Toutes,,,,,Ballon d'eau chaude,IfcBoilerType.WATER,Mechanical Equipment,,
@@ -3227,8 +3225,8 @@ Production de chaleur - eau,Documentation,Plans et schémas,APD,Rapport energét
 Production de chaleur - eau,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Production de chaleur - eau,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Production de chaleur - eau,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Production de chaleur - eau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.20 – Domestic Water Heaters
-Production de chaleur - eau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 – Heat Generation
+Production de chaleur - eau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.20 - Domestic Water Heaters
+Production de chaleur - eau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 - Heat Generation
 Production de chaleur - vapeur,Classe et type IFC,,Toutes,,,,,Chaudière,IfcBoilerType.STEAM,Mechanical Equipment,,
 Production de chaleur - vapeur,Informations alphanumériques,Niveau objet,APS,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
 Production de chaleur - vapeur,Informations alphanumériques,Niveau objet,APD,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -3281,8 +3279,8 @@ Production de chaleur - vapeur,Documentation,Plans et schémas,APD,Rapport energ
 Production de chaleur - vapeur,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Production de chaleur - vapeur,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Production de chaleur - vapeur,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Production de chaleur - vapeur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.20 – Domestic Water Heaters
-Production de chaleur - vapeur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 – Heat Generation
+Production de chaleur - vapeur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.20 - Domestic Water Heaters
+Production de chaleur - vapeur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.10 - Heat Generation
 Production de froid,Classe et type IFC,,Toutes,,,,,Climatiseur,IfcChillerType.AIRCOOLED,Mechanical Equipment,,
 Production de froid,Informations alphanumériques,Niveau objet,APS,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
 Production de froid,Informations alphanumériques,Niveau objet,APD,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -3335,9 +3333,9 @@ Production de froid,Documentation,Plans et schémas,APD,Rapport energétique,,,,
 Production de froid,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Production de froid,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Production de froid,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Production de froid,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.10 – Central Cooling
-Production de froid,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.30 – Evaporative Air-Cooling
-Production de froid,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.70 – Decentralized Cooling
+Production de froid,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.10 - Central Cooling
+Production de froid,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.30 - Evaporative Air-Cooling
+Production de froid,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.70 - Decentralized Cooling
 Projet,Classe et type IFC,,Toutes,,,,,Projet,IfcProject,Project Information,,
 Projet,Informations alphanumériques,Niveau objet,APS,,Code du projet,IfcRoot.Name,,,,,,
 Projet,Informations alphanumériques,Niveau objet,APD,,Code du projet,IfcRoot.Name,,,,,,
@@ -3396,17 +3394,17 @@ Raccord de chemin de câbles,Documentation,Maintenance et fiches techniques,EXP,
 Raccord de chemin de câbles,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Raccord de chemin de câbles,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Raccord de chemin de câbles,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.30 – Power Distribution
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5020.90 – Electrical Service and Distribution Supplementary
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.30 - Power Distribution
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5020.90 - Electrical Service and Distribution Supplementary
 Components"
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.10 – Branch Wiring System
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5030.90 – General Purpose Electrical Power Supplementary
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5030.10 - Branch Wiring System
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5030.90 - General Purpose Electrical Power Supplementary
 Components"
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.20 – Branch Wiring for Lighting
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.90 – Lighting Supplementary Components
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5080.90 – Miscellaneous Electrical Systems Supplementary
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.20 - Branch Wiring for Lighting
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5040.90 - Lighting Supplementary Components
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,"D5080.90 - Miscellaneous Electrical Systems Supplementary
 Components"
-Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6090.10 – Supplementary Components
+Raccord de chemin de câbles,Classification,,Toutes,,,,,,,,Uniformat II 2010,D6090.10 - Supplementary Components
 Raccord de gaine de ventilation,Classe et type IFC,,Toutes,,,,,Raccord de gaine de ventilation,IfcDuctFittingType,Duct Fittings,,
 Raccord de gaine de ventilation,Classe et type IFC,,Toutes,,,,,Branchement,IfcDuctFittingType.CONNECTOR,Duct Fittings,,
 Raccord de gaine de ventilation,Classe et type IFC,,Toutes,,,,,Coude,IfcDuctFittingType.BEND,Duct Fittings,,
@@ -3450,8 +3448,8 @@ Raccord de gaine de ventilation,Documentation,Plans et schémas,EXP,Schéma unif
 Raccord de gaine de ventilation,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Raccord de gaine de ventilation,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Raccord de gaine de ventilation,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Raccord de gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 – HVAC Air Distribution Systems
-Raccord de gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060 – Ventilation
+Raccord de gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 - HVAC Air Distribution Systems
+Raccord de gaine de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060 - Ventilation
 Raccord tuyau sanitaire chauffage,Classe et type IFC,,Toutes,,,,,Bouchon,IfcPipeFittingType.OBSTRUCTION,Pipe Fittings,,
 Raccord tuyau sanitaire chauffage,Classe et type IFC,,Toutes,,,,,Coude,IfcPipeFittingType.BEND,Pipe Fittings,,
 Raccord tuyau sanitaire chauffage,Classe et type IFC,,Toutes,,,,,Obturateur,IfcPipeFittingType.OBSTRUCTION,Pipe Fittings,,
@@ -3496,40 +3494,40 @@ Raccord tuyau sanitaire chauffage,Documentation,Plans et schémas,EXP,Schéma un
 Raccord tuyau sanitaire chauffage,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Raccord tuyau sanitaire chauffage,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Raccord tuyau sanitaire chauffage,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.70 Rainwater Management
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.40 – Domestic Water Piping
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.30 – Sanitary Sewerage Piping
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.20 – Stormwater Drainage Piping
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.60 – Grey Water Systems
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2050 – General service Compressed-Air
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.20 – Vacuum Systems
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.30 – Gas Systems
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.40 Chemical-Waste Systems
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.50 Processed Water System
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.10 Fuel Piping
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 – Decentralized Heating Equipement
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.10 – Central Cooling
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 – Facility HVAC Distribution Systems
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 – Facility Steam Distribution
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3070.10 – Snow Melting
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.10 – Water-Based Fire-Suppression
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.50 – Fire-Extinguishing
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.40 Cathodic Protection
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.10 Pools
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.20 Interior Fountains
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.60 Ice Rinks
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.10 Exterior Fountains
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2080.10 – Planting Irrigation
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 – Site Domestic Water Distribution
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 – Site Fire Protection Water Distribution
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 Site Irrigation Water Distribution
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.20 Sanitary Sewerage Piping
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.20 – Storm Drainage Piping
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.30 – Culverts
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.60 – Site Subdrainage
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050 – SIte Energy Distribution
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 – Site Fuel Distribution
-Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3090 – Liquid and Gas Site Utilities Supplementary Components
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.70 - Rainwater Management
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.40 - Domestic Water Piping
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.30 - Sanitary Sewerage Piping
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.20 - Stormwater Drainage Piping
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.60 - Grey Water Systems
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2050 - General service Compressed-Air
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.20 - Vacuum Systems
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.30 - Gas Systems
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.40 - Chemical-Waste Systems
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.50 - Processed Water System
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.10 - Fuel Piping
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 - Decentralized Heating Equipement
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.10 - Central Cooling
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 - Facility HVAC Distribution Systems
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 - Facility Steam Distribution
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3070.10 - Snow Melting
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.10 - Water-Based Fire-Suppression
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.50 - Fire-Extinguishing
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.40 - Cathodic Protection
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.10 - Pools
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.20 - Interior Fountains
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.60 - Ice Rinks
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.10 - Exterior Fountains
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2080.10 - Planting Irrigation
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 - Site Domestic Water Distribution
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 - Site Fire Protection Water Distribution
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 - Site Irrigation Water Distribution
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.20 - Sanitary Sewerage Piping
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.20 - Storm Drainage Piping
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.30 - Culverts
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.60 - Site Subdrainage
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050 - SIte Energy Distribution
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 - Site Fuel Distribution
+Raccord tuyau sanitaire chauffage,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3090 - Liquid and Gas Site Utilities Supplementary Components
 Rampe,Classe et type IFC,,Toutes,,,,,Plan incliné,IfcRamp.STRAIGHT_RUN_RAMP,Ramps,,
 Rampe,Classe et type IFC,,Toutes,,,,,Rampe droite simple,IfcRamp.STRAIGHT_RUN_RAMP,Ramps,,
 Rampe,Classe et type IFC,,Toutes,,,,,Rampe droite avec palier intermédiaire,IfcRamp.TWO_STRAIGHT_RUN_RAMP,Ramps,,
@@ -3605,7 +3603,7 @@ Rampe,Documentation,Plans et schémas,APD,Surcharges d’exploitation,,,,,,,,
 Rampe,Documentation,Plans et schémas,PDE,Surcharges d’exploitation,,,,,,,,
 Rampe,Documentation,Plans et schémas,EXE,Surcharges d’exploitation,,,,,,,,
 Rampe,Documentation,Plans et schémas,EXP,Surcharges d’exploitation,,,,,,,,
-Rampe,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.50 – Ramps
+Rampe,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1010.50 - Ramps
 Récolte des eaux,Classe et type IFC,,Toutes,,,,,Gouttière,IfcPipeSegmentType.GUTTER,Gutters,,
 Récolte des eaux,Classe et type IFC,,Toutes,,,,,Chéneau,IfcPipeSegmentType.GUTTER,Gutters,,
 Récolte des eaux,Classe et type IFC,,Toutes,,,,,Chenal,IfcPipeSegmentType.GUTTER,Gutters,,
@@ -3647,7 +3645,7 @@ Récolte des eaux,Documentation,Maintenance et fiches techniques,EXP,Fiche techn
 Récolte des eaux,Documentation,Plans et schémas,PDE,Détail d'exécution,,,,,,,,
 Récolte des eaux,Documentation,Plans et schémas,EXE,Détail d'exécution,,,,,,,,
 Récolte des eaux,Documentation,Plans et schémas,EXP,Détail d'exécution,,,,,,,,
-Récolte des eaux,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.70 – Rainwater Management
+Récolte des eaux,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.70 - Rainwater Management
 Réservoir,Classe et type IFC,,Toutes,,,,,Bâche incendie (souple ou rigide),IfcTankType.USERDEFINED[VESSEL],Mechanical Equipment,,
 Réservoir,Classe et type IFC,,Toutes,,,,,Ballon tampon,IfcTankType.PRESSUREVESSEL,Mechanical Equipment,,
 Réservoir,Classe et type IFC,,Toutes,,,,,Ballon eau-morte,IfcTankType.USERDEFINED[VESSEL],Mechanical Equipment,,
@@ -3705,22 +3703,22 @@ Réservoir,Documentation,Plans et schémas,APD,Schéma d'emprise,,,,,,,,
 Réservoir,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Réservoir,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Réservoir,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.10 – Facility Potable-Water Storage Tanks
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.10 – Sanitary Sewerage Equipement
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.10 – Stormwater Drainage Equipement
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.60 – Grey Water Systems
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.30 – Gas Systems
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.40 – Chemical-Waste Systems
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.50 – Fuel Storage Tanks
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 – Facility Hydronic Distribution
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 – Facility Steam Distribution
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.40 – Cathodic Protection
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G1050.60 – Contaminated Site Material Removal
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 – Site Domestic Water Distribution
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 Site Fire Protection Water Distribution
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 – SIte Irrigation Water Distribution
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.40 – Utiilty Septic Tanks
-Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 – Site Fuel Distribution
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.10 - Facility Potable-Water Storage Tanks
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.10 - Sanitary Sewerage Equipement
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.10 - Stormwater Drainage Equipement
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.60 - Grey Water Systems
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.30 - Gas Systems
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.40 - Chemical-Waste Systems
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.50 - Fuel Storage Tanks
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 - Facility Hydronic Distribution
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 - Facility Steam Distribution
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.40 - Cathodic Protection
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G1050.60 - Contaminated Site Material Removal
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 - Site Domestic Water Distribution
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 - Site Fire Protection Water Distribution
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 - SIte Irrigation Water Distribution
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.40 - Utiilty Septic Tanks
+Réservoir,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 - Site Fuel Distribution
 Semelle de fondation,Classe et type IFC,,Toutes,,,,,Semelle isolé,IfcFooting.PAD_FOOTING,Structural Foundations,,
 Semelle de fondation,Classe et type IFC,,Toutes,,,,,Plot de fondation,IfcFooting.PAD_FOOTING,Structural Foundations,,
 Semelle de fondation,Classe et type IFC,,Toutes,,,,,Surépaisseur radier ponctuelle,IfcFooting.PAD_FOOTING,Structural Foundations,,
@@ -3781,7 +3779,7 @@ Semelle de fondation,Documentation,Plans et schémas,PDE,Rapport stabilité,,,,,
 Semelle de fondation,Documentation,Plans et schémas,EXE,Rapport stabilité,,,,,,,,
 Semelle de fondation,Documentation,Plans et schémas,EXP,Rapport stabilité,,,,,,,,
 Semelle de fondation,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Semelle de fondation,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1010.10 – Wall FoundationA4040 - Pits and Bases
+Semelle de fondation,Classification,,Toutes,,,,,,,,Uniformat II 2010,A1010.10 - Wall FoundationA4040 - Pits and Bases
 Silencieux de ventilation,Classe et type IFC,,Toutes,,,,,Silencieux oval,IfcDuctSilencerType.FLATOVAL,Duct Accessories,,
 Silencieux de ventilation,Classe et type IFC,,Toutes,,,,,Silencieux rectangulaire,IfcDuctSilencerType.RECTANGULAR,Duct Accessories,,
 Silencieux de ventilation,Classe et type IFC,,Toutes,,,,,Silencieux rond,IfcDuctSilencerType.ROUND,Duct Accessories,,
@@ -3819,7 +3817,7 @@ Silencieux de ventilation,Documentation,Plans et schémas,EXP,Schéma unifilaire
 Silencieux de ventilation,Documentation,Plans et schémas,PDE,Performances à atteindre,,,,,,,,
 Silencieux de ventilation,Documentation,Plans et schémas,EXE,Performances à atteindre,,,,,,,,
 Silencieux de ventilation,Documentation,Plans et schémas,EXP,Performances à atteindre,,,,,,,,
-Silencieux de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.90 – Ventilation Supplementary Components
+Silencieux de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.90 - Ventilation Supplementary Components
 Site,Classe et type IFC,,Toutes,,,,,Site,IfcSite,Site,,
 Site,Classe et type IFC,,Toutes,,,,,Point de référence,IfcBuildingElementProxy.USERDEFINED[REFERENCEPOINT],Generic Models,,
 Site,Classe et type IFC,,Toutes,,,,,Point de géoréférencement,IfcBuildingElementProxy.USERDEFINED[REFERENCEPOINT],Generic Models,,
@@ -3891,9 +3889,9 @@ Sortie de ventilation,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,
 Sortie de ventilation,Documentation,Plans et schémas,PDE,Performances à atteindre,,,,,,,,
 Sortie de ventilation,Documentation,Plans et schémas,EXE,Performances à atteindre,,,,,,,,
 Sortie de ventilation,Documentation,Plans et schémas,EXP,Performances à atteindre,,,,,,,,
-,,,,,,,,,,,Uniformat II 2010,B2070 – Exterior Louvers and Vents
-,,,,,,,,,,,Uniformat II 2010,D3060.10 – Supply Air
-Sortie de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.20 – Return Air
+Sortie de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,B2070 - Exterior Louvers and Vents
+Sortie de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.10 - Supply Air
+Sortie de ventilation,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060.20 - Return Air
 Sprinkler,Classe et type IFC,,Toutes,,,,,Sprinkler,IfcFireSuppressionTerminalType.SPRINKLER,Sprinklers,,
 Sprinkler,Classe et type IFC,,Toutes,,,,,Extincteur automatique à eau,IfcFireSuppressionTerminalType.SPRINKLER,Sprinklers,,
 Sprinkler,Informations alphanumériques,Niveau objet,APD,,Statut de rénovation (Archicad),ePset_FireSuppressionTerminalTypeCommon.Status,-,,,,,
@@ -3939,8 +3937,8 @@ Sprinkler,Documentation,Maintenance et fiches techniques,EXP,Carnet d'entretien,
 Sprinkler,Documentation,Plans et schémas,PDE,Schéma unifilaire,,,,,,,,
 Sprinkler,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Sprinkler,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
-Sprinkler,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 – Fire Suppression
-,,,,,,,,Batterie (stockage chimique),IfcElectricFlowStorageDeviceType.BATTERY,Electrical Equipment,,
+Sprinkler,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010 - Fire Suppression
+Stockage d'électricité,Classe et type IFC,,Toutes,,,,,Batterie (stockage chimique),IfcElectricFlowStorageDeviceType.BATTERY,Electrical Equipment,,
 Stockage d'électricité,Classe et type IFC,,Toutes,,,,,Batterie de condensateurs,IfcElectricFlowStorageDeviceType.CAPACITORBANK,Electrical Equipment,,
 Stockage d'électricité,Classe et type IFC,,Toutes,,,,,Batterie de compensation,IfcElectricFlowStorageDeviceType.CAPACITORBANK,Electrical Equipment,,
 Stockage d'électricité,Classe et type IFC,,Toutes,,,,,Anti-harmonique,IfcElectricFlowStorageDeviceType.HARMONICFILTER,Electrical Equipment,,
@@ -3998,7 +3996,7 @@ Stockage d'électricité,Documentation,Plans et schémas,APD,Rapport energétiqu
 Stockage d'électricité,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Stockage d'électricité,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Stockage d'électricité,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Stockage d'électricité,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5010.20 – Battery Equipment
+Stockage d'électricité,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5010.20 - Battery Equipment
 Tableau électrique,Classe et type IFC,,Toutes,,,,,Tableau compteur,IfcElectricDistributionPoint,Electrical Equipment,,
 Tableau électrique,Classe et type IFC,,Toutes,,,,,Armoire électrique de commande,IfcElectricDistributionPoint,Electrical Equipment,,
 Tableau électrique,Classe et type IFC,,Toutes,,,,,Tableau général basse tension,IfcElectricDistributionPoint,Electrical Equipment,,
@@ -4052,8 +4050,8 @@ Tableau électrique,Documentation,Plans et schémas,APD,,Schéma d'emprise,,,,,,
 Tableau électrique,Documentation,Plans et schémas,PDE,,Schéma unifilaire,,,,,,,
 Tableau électrique,Documentation,Plans et schémas,EXE,,Schéma unifilaire,,,,,,,
 Tableau électrique,Documentation,Plans et schémas,EXP,,Schéma unifilaire,,,,,,,
-Tableau électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 – Electrical Service
-Tableau électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.30 – Power Distribution
+Tableau électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 - Electrical Service
+Tableau électrique,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.30 - Power Distribution
 Terrain,Classe et type IFC,,Toutes,,,,,Terrain,IfcSite,Topography,,
 Terrain,Classe et type IFC,,Toutes,,,,,Parcelle cadastrale,IfcBuildingElementProxy.USERDEFINED[TERRAIN],Topography,,
 Terrain,Informations alphanumériques,Niveau objet,APS,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -4151,12 +4149,12 @@ Toiture,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Toiture,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Toiture,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
 Toiture,Documentation,Plans et schémas,EXE,Déclaration de performance environnementale,,,,,,,,
-Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020 – Roof Construction
-Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3010 – Roofing
-Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3040 – Traffic Bearing Horizontal Enclosures
-Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080 – Overhead Exterior Enclosures
-Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 – Ceiling Finishes
-Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020 – Special Construction
+Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B1020 - Roof Construction
+Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3010 - Roofing
+Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3040 - Traffic Bearing Horizontal Enclosures
+Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3080 - Overhead Exterior Enclosures
+Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,C2050 - Ceiling Finishes
+Toiture,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1020 - Special Construction
 Transformateur,Classe et type IFC,,Toutes,,,,,Transformateur de tension,IfcTransformerType.VOLTAGE,Electrical Equipment,,
 Transformateur,Classe et type IFC,,Toutes,,,,,Transformateur d'isolement,IfcTransformerType.USERDEFINED[ISOLATIONTRANSFORMER],Electrical Equipment,,
 Transformateur,Classe et type IFC,,Toutes,,,,,Transformateur de mesure,IfcTransformerType.CURRENT,Electrical Equipment,,
@@ -4215,10 +4213,10 @@ Transformateur,Documentation,Plans et schémas,APD,Rapport energétique,,,,,,,,
 Transformateur,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Transformateur,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Transformateur,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 – Electrical Service and Distribution
-Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4010.30 – Electrical Substations
-Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4010.40 – Electrical Transformers
-Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4050.10 – Area Lighting
+Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5020.10 - Electrical Service and Distribution
+Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4010.30 - Electrical Substations
+Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4010.40 - Electrical Transformers
+Transformateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,G4050.10 - Area Lighting
 Tuyau,Classe et type IFC,,Toutes,,,,,Conduite rigide,IfcPipeSegmentType.RIGIDSEGMENT,Pipes,,
 Tuyau,Classe et type IFC,,Toutes,,,,,Conduite souple,IfcPipeSegmentType.FLEXIBLESEGMENT,Pipes,,
 Tuyau,Classe et type IFC,,Toutes,,,,,Tuyau d'adduction d'eau,IfcPipeSegmentType.RIGIDSEGMENT,Pipes,,
@@ -4275,40 +4273,40 @@ Tuyau,Documentation,Plans et schémas,EXE,Schéma unifilaire,,,,,,,,
 Tuyau,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Tuyau,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Tuyau,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.70 Rainwater Management
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.40 – Domestic Water Piping
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.30 – Sanitary Sewerage Piping
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.20 – Stormwater Drainage Piping
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.60 – Grey Water Systems
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2050 – General service Compressed-Air
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.20 – Vacuum Systems
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.30 – Gas Systems
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.40 Chemical-Waste Systems
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.50 Processed Water System
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.10 Fuel Piping
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 – Decentralized Heating Equipement
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.10 – Central Cooling
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 – Facility HVAC Distribution Systems
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 – Facility Steam Distribution
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3070.10 – Snow Melting
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.10 – Water-Based Fire-Suppression
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.50 – Fire-Extinguishing
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.40 Cathodic Protection
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.10 Pools
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.20 Interior Fountains
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.60 Ice Rinks
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.10 Exterior Fountains
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2080.10 – Planting Irrigation
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 – Site Domestic Water Distribution
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 – Site Fire Protection Water Distribution
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 Site Irrigation Water Distribution
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.20 Sanitary Sewerage Piping
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.20 – Storm Drainage Piping
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.30 – Culverts
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.60 – Site Subdrainage
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050 – SIte Energy Distribution
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 – Site Fuel Distribution
-Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3090 – Liquid and Gas Site Utilities Supplementary Components
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,B3020.70 - Rainwater Management
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2010.40 - Domestic Water Piping
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2020.30 - Sanitary Sewerage Piping
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.20 - Stormwater Drainage Piping
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2030.60 - Grey Water Systems
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2050 - General service Compressed-Air
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.20 - Vacuum Systems
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.30 - Gas Systems
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.40 - Chemical-Waste Systems
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D2060.50 - Processed Water System
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3010.10 - Fuel Piping
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3020.70 - Decentralized Heating Equipement
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3030.10 - Central Cooling
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.10 - Facility HVAC Distribution Systems
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.30 - Facility Steam Distribution
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3070.10 - Snow Melting
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.10 - Water-Based Fire-Suppression
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D4010.50 - Fire-Extinguishing
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,D5080.40 - Cathodic Protection
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.10 - Pools
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.20 - Interior Fountains
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,F1050.60 - Ice Rinks
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2060.10 - Exterior Fountains
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G2080.10 - Planting Irrigation
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.10 - Site Domestic Water Distribution
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.30 - Site Fire Protection Water Distribution
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3010.50 - Site Irrigation Water Distribution
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3020.20 - Sanitary Sewerage Piping
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.20 - Storm Drainage Piping
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.30 - Culverts
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3030.60 - Site Subdrainage
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3050 - SIte Energy Distribution
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3060 - Site Fuel Distribution
+Tuyau,Classification,,Toutes,,,,,,,,Uniformat II 2010,G3090 - Liquid and Gas Site Utilities Supplementary Components
 Ventilateur,Classe et type IFC,,Toutes,,,,,Ventilateur,IfcFanType,Mechanical Equipment,,
 Ventilateur,Informations alphanumériques,Niveau objet,PDE,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
 Ventilateur,Informations alphanumériques,Niveau objet,EXE,,Classe IFC,IFC Class,Export Type to IFC As,,,,,
@@ -4349,9 +4347,9 @@ Ventilateur,Documentation,Plans et schémas,EXP,Schéma unifilaire,,,,,,,,
 Ventilateur,Documentation,Plans et schémas,PDE,Rapport energétique,,,,,,,,
 Ventilateur,Documentation,Plans et schémas,EXE,Rapport energétique,,,,,,,,
 Ventilateur,Documentation,Plans et schémas,EXP,Rapport energétique,,,,,,,,
-Ventilateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 – HVAC Air Distribution
-Ventilateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060 – Ventilation
-Ventilateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,E1060.70 – Residential Ceiling Fans
+Ventilateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3050.50 - HVAC Air Distribution
+Ventilateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,D3060 - Ventilation
+Ventilateur,Classification,,Toutes,,,,,,,,Uniformat II 2010,E1060.70 - Residential Ceiling Fans
 Zone,Classe et type IFC,,Toutes,,,,,Zone,IfcZone,HVAC Zones,,
 Zone,Classe et type IFC,,Toutes,,,,,Aile,IfcZone,HVAC Zones,,
 Zone,Classe et type IFC,,Toutes,,,,,Appartement,IfcZone,HVAC Zones,,
