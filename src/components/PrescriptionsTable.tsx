@@ -148,11 +148,13 @@ export function PrescriptionsTable({
       return;
     }
 
-    const headers = ["Catégorie", "Type doc.", "Propriété", "Paramètre IFC", "Paramètre Revit", "Nom", "IFC Type", "Classification", "Description"];
+    const headers = ["Statut", "Catégorie", "Type doc.", "Propriété", "Paramètre IFC", "Paramètre Revit", "Nom", "IFC Type", "Classification", "Description"];
     const text = [
       headers.join("\t"),
-      ...displayedRecords.map(record =>
-        [
+      ...displayedRecords.map(record => {
+        const isChecked = checkedItems.has(getRecordId(record));
+        return [
+          isChecked ? "✓" : "○",
           record.Categorie,
           record.TypeDocument,
           record.Propriete,
@@ -162,8 +164,8 @@ export function PrescriptionsTable({
           record.IFC_Type,
           record.Classification,
           record.Descriptif,
-        ].join("\t")
-      )
+        ].join("\t");
+      })
     ].join("\n");
 
     navigator.clipboard.writeText(text);
@@ -177,11 +179,13 @@ export function PrescriptionsTable({
       return;
     }
 
-    const headers = ["Catégorie", "Phase", "Type document", "Propriété", "Paramètre IFC", "Paramètre Revit_ENG", "Nom", "IfcExportAs.IfcExportTYPE", "Classification", "Numéro - Description"];
+    const headers = ["Statut", "Catégorie", "Phase", "Type document", "Propriété", "Paramètre IFC", "Paramètre Revit_ENG", "Nom", "IfcExportAs.IfcExportTYPE", "Classification", "Numéro - Description"];
     const csvLines = [headers.join(";")];
 
     displayedRecords.forEach((record) => {
+      const isChecked = checkedItems.has(getRecordId(record));
       const row = [
+        `"${isChecked ? "Complété" : "À faire"}"`,
         `"${record.Categorie}"`,
         `"${record.Phase}"`,
         `"${record.TypeDocument}"`,
@@ -218,22 +222,27 @@ export function PrescriptionsTable({
       return;
     }
 
-    const data = displayedRecords.map(record => ({
-      "Catégorie": record.Categorie,
-      "Type document": record.TypeDocument,
-      "Propriété": record.Propriete,
-      "Paramètre IFC": record.IFC_Reference,
-      "Paramètre Revit": record.Revit_Param,
-      "Nom": record.Nom,
-      "IFC Type": record.IFC_Type,
-      "Classification": record.Classification,
-      "Description": record.Descriptif,
-    }));
+    const data = displayedRecords.map(record => {
+      const isChecked = checkedItems.has(getRecordId(record));
+      return {
+        "Statut": isChecked ? "✓ Complété" : "○ À faire",
+        "Catégorie": record.Categorie,
+        "Type document": record.TypeDocument,
+        "Propriété": record.Propriete,
+        "Paramètre IFC": record.IFC_Reference,
+        "Paramètre Revit": record.Revit_Param,
+        "Nom": record.Nom,
+        "IFC Type": record.IFC_Type,
+        "Classification": record.Classification,
+        "Description": record.Descriptif,
+      };
+    });
 
     const worksheet = XLSX.utils.json_to_sheet(data);
 
     // Set column widths
     worksheet["!cols"] = [
+      { wch: 12 }, // Statut
       { wch: 25 }, // Catégorie
       { wch: 15 }, // Type document
       { wch: 30 }, // Propriété
@@ -271,24 +280,34 @@ export function PrescriptionsTable({
     doc.text(`Élément: ${selectedElement}`, 14, 24);
     doc.text(`Phase: ${projectPhase}`, 14, 30);
     doc.text(`Date: ${new Date().toLocaleDateString("fr-FR")}`, 14, 36);
-    doc.text(`${displayedRecords.length} prescriptions`, 200, 30);
+    
+    // Progress info
+    doc.text(`Progression: ${progressStats.checked}/${progressStats.total} (${progressStats.percentage}%)`, 200, 24);
+    doc.text(`${displayedRecords.length} prescriptions affichées`, 200, 30);
 
     // Table
     autoTable(doc, {
       startY: 42,
-      head: [["Catégorie", "Type doc.", "Propriété", "Paramètre IFC", "Paramètre Revit", "Classification"]],
-      body: displayedRecords.map(record => [
-        record.Categorie,
-        record.TypeDocument,
-        record.Propriete,
-        record.IFC_Reference,
-        record.Revit_Param,
-        record.Classification,
-      ]),
+      head: [["Statut", "Catégorie", "Type doc.", "Propriété", "Paramètre IFC", "Paramètre Revit", "Classification"]],
+      body: displayedRecords.map(record => {
+        const isChecked = checkedItems.has(getRecordId(record));
+        return [
+          isChecked ? "✓" : "○",
+          record.Categorie,
+          record.TypeDocument,
+          record.Propriete,
+          record.IFC_Reference,
+          record.Revit_Param,
+          record.Classification,
+        ];
+      }),
       theme: "grid",
       styles: { fontSize: 8, cellPadding: 2 },
       headStyles: { fillColor: [37, 99, 235], textColor: 255, fontStyle: "bold" },
       alternateRowStyles: { fillColor: [245, 247, 250] },
+      columnStyles: {
+        0: { cellWidth: 12, halign: "center" }, // Statut column
+      },
       margin: { left: 14, right: 14 },
       didDrawPage: (data) => {
         // Footer with pagination
