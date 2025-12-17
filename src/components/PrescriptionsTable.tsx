@@ -30,14 +30,13 @@ export function PrescriptionsTable({
     }
 
     // CSV Header
-    const headers = ["Catégorie", "Sous-catégorie", "Phase", "Type document", "Propriété", "IFC_Reference", "Revit_Param", "Nom", "IFC Type", "Catégorie Revit", "Classification", "Descriptif"];
+    const headers = ["Catégorie", "Phase", "Type document", "Propriété", "Paramètre IFC", "Paramètre Revit_ENG", "Nom", "IfcExportAs.IfcExportTYPE", "Classification", "Numéro - Description"];
     const csvLines = [headers.join(";")];
 
     // CSV Data
     filteredRecords.forEach((record) => {
       const row = [
         `"${record.Categorie}"`,
-        `"${record.Sous_categorie}"`,
         `"${record.Phase}"`,
         `"${record.TypeDocument}"`,
         `"${record.Propriete}"`,
@@ -45,7 +44,6 @@ export function PrescriptionsTable({
         `"${record.Revit_Param}"`,
         `"${record.Nom}"`,
         `"${record.IFC_Type}"`,
-        `"${record.Categorie_Revit}"`,
         `"${record.Classification}"`,
         `"${record.Descriptif}"`,
       ];
@@ -130,15 +128,14 @@ export function PrescriptionsTable({
             <TableHeader>
               <TableRow>
                 <TableHead className="min-w-[120px]">Catégorie</TableHead>
-                <TableHead className="min-w-[120px]">Sous-catégorie</TableHead>
                 <TableHead className="min-w-[100px]">Type doc.</TableHead>
                 <TableHead className="min-w-[150px]">Propriété</TableHead>
-                <TableHead className="min-w-[200px]">IFC_Reference</TableHead>
-                <TableHead className="min-w-[150px]">Revit_Param</TableHead>
+                <TableHead className="min-w-[200px]">Paramètre IFC</TableHead>
+                <TableHead className="min-w-[180px]">Paramètre Revit_ENG</TableHead>
                 <TableHead className="min-w-[150px]">Nom</TableHead>
-                <TableHead className="min-w-[200px]">IFC Type</TableHead>
+                <TableHead className="min-w-[250px]">IfcExportAs.IfcExportTYPE</TableHead>
                 <TableHead className="min-w-[150px]">Classification</TableHead>
-                <TableHead className="min-w-[200px]">Descriptif</TableHead>
+                <TableHead className="min-w-[200px]">Numéro - Description</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -150,7 +147,6 @@ export function PrescriptionsTable({
                         {record.Categorie}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-sm">{record.Sous_categorie || "-"}</TableCell>
                     <TableCell className="text-sm">
                       {record.TypeDocument && (
                         <Badge variant="secondary" className="text-xs">
