@@ -21,6 +21,7 @@ export const PROJECT_PHASES: ProjectPhase[] = ["APS", "APD", "PDE", "EXE", "EXP"
 const CSV_PATH = "/data/GID_DATABASE.csv";
 
 let cachedData: GIDRecord[] | null = null;
+let elementIndex: Map<string, GIDRecord[]> | null = null;
 
 export async function loadGIDData(): Promise<GIDRecord[]> {
   if (cachedData) {
@@ -31,7 +32,22 @@ export async function loadGIDData(): Promise<GIDRecord[]> {
   const text = await response.text();
   const records = parseCSV(text);
   cachedData = records;
+  
+  // Build element index for O(1) lookup
+  elementIndex = new Map();
+  records.forEach(record => {
+    const element = record.Element;
+    if (!elementIndex!.has(element)) {
+      elementIndex!.set(element, []);
+    }
+    elementIndex!.get(element)!.push(record);
+  });
+  
   return records;
+}
+
+export function getElementIndex(): Map<string, GIDRecord[]> | null {
+  return elementIndex;
 }
 
 function parseCSV(text: string): GIDRecord[] {
@@ -101,11 +117,14 @@ export function filterRecords(
   phase: ProjectPhase,
   element: string
 ): GIDRecord[] {
-  return records.filter(record => {
-    const phaseMatch = record.Phase === phase || record.Phase === "Toutes";
-    const elementMatch = record.Element === element;
-    return phaseMatch && elementMatch;
-  });
+  // Use element index for O(1) lookup instead of O(n) iteration
+  const index = getElementIndex();
+  const elementRecords = index?.get(element) || [];
+  
+  // Filter only by phase on the smaller subset (~50-200 records instead of 4300)
+  return elementRecords.filter(record => 
+    record.Phase === phase || record.Phase === "Toutes"
+  );
 }
 
 export interface MappingResult {
