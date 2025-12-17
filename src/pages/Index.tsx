@@ -1,9 +1,11 @@
 import { useState, useEffect, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { PrescriptionsTable } from "@/components/PrescriptionsTable";
 import { ProjectConfig } from "@/components/ProjectConfig";
 import { PhaseComparison } from "@/components/PhaseComparison";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ClipboardList, GitCompare } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ClipboardList, GitCompare, Code2 } from "lucide-react";
 import {
   loadGIDData,
   getUniqueElements,
@@ -57,11 +59,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6">
+      <header className="sticky top-0 z-10 flex h-14 items-center justify-between gap-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6">
         <div className="flex items-center gap-2">
           <span className="text-lg font-semibold">BIMsmarter</span>
           <span className="text-sm text-muted-foreground">| Guide de Prescriptions GID</span>
         </div>
+        <Link to="/api-docs">
+          <Button variant="outline" size="sm" className="flex items-center gap-2">
+            <Code2 className="h-4 w-4" />
+            API & Scripts
+          </Button>
+        </Link>
       </header>
 
       <main className="flex-1 p-6 space-y-6">
