@@ -24,6 +24,12 @@ interface GIDRecord {
 
 const CSV_URL = "https://xdzsqiemmiplxckfcsar.lovableproject.com/data/GID_DATABASE.csv";
 
+// Cache for CSV data and valid elements
+let cachedRecords: GIDRecord[] | null = null;
+let validElements: Set<string> | null = null;
+let lastFetch = 0;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
 function parseCSVLine(line: string): string[] {
   const result: string[] = [];
   let current = "";
@@ -70,6 +76,78 @@ function parseCSV(text: string): GIDRecord[] {
   }).filter(record => record.Element);
 }
 
+// Simple Levenshtein distance for fuzzy matching
+function levenshteinDistance(a: string, b: string): number {
+  const matrix: number[][] = [];
+  
+  for (let i = 0; i <= b.length; i++) {
+    matrix[i] = [i];
+  }
+  for (let j = 0; j <= a.length; j++) {
+    matrix[0][j] = j;
+  }
+  
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) === a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j] + 1
+        );
+      }
+    }
+  }
+  
+  return matrix[b.length][a.length];
+}
+
+function findSimilarElements(input: string, elements: Set<string>, maxSuggestions = 3): string[] {
+  const inputLower = input.toLowerCase();
+  const suggestions: { element: string; distance: number }[] = [];
+  
+  elements.forEach(element => {
+    const elementLower = element.toLowerCase();
+    const distance = levenshteinDistance(inputLower, elementLower);
+    
+    // Only consider elements with reasonable similarity
+    if (distance <= Math.max(3, inputLower.length / 2)) {
+      suggestions.push({ element, distance });
+    }
+  });
+  
+  return suggestions
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, maxSuggestions)
+    .map(s => s.element);
+}
+
+async function fetchAndCacheRecords(): Promise<GIDRecord[]> {
+  const now = Date.now();
+  
+  if (cachedRecords && (now - lastFetch) < CACHE_DURATION) {
+    return cachedRecords;
+  }
+  
+  console.log("Fetching CSV data (cache miss or expired)");
+  const csvResponse = await fetch(CSV_URL);
+  if (!csvResponse.ok) {
+    throw new Error(`Failed to fetch CSV data: ${csvResponse.status}`);
+  }
+  
+  const csvText = await csvResponse.text();
+  cachedRecords = parseCSV(csvText);
+  
+  // Build valid elements set
+  validElements = new Set(cachedRecords.map(r => r.Element));
+  lastFetch = now;
+  
+  console.log(`Cached ${cachedRecords.length} records with ${validElements.size} unique elements`);
+  return cachedRecords;
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -111,20 +189,34 @@ serve(async (req) => {
 
     console.log(`Fetching prescriptions for element: ${element}, phase: ${phase}`);
 
-    // Fetch CSV data
-    const csvResponse = await fetch(CSV_URL);
-    if (!csvResponse.ok) {
-      throw new Error(`Failed to fetch CSV data: ${csvResponse.status}`);
-    }
-    const csvText = await csvResponse.text();
-    const records = parseCSV(csvText);
+    // Fetch and cache CSV data
+    const records = await fetchAndCacheRecords();
 
-    console.log(`Parsed ${records.length} total records`);
-
-    // Filter by element and phase
+    // Validate element exists
     const normalizedElement = element.toLowerCase();
+    const exactMatch = Array.from(validElements!).find(
+      e => e.toLowerCase() === normalizedElement
+    );
+
+    if (!exactMatch) {
+      const suggestions = findSimilarElements(element, validElements!);
+      const suggestionText = suggestions.length > 0 
+        ? ` Vouliez-vous dire : ${suggestions.join(', ')} ?`
+        : " Consultez /get-elements pour la liste complète.";
+      
+      return new Response(JSON.stringify({
+        success: false,
+        error: `Element '${element}' introuvable.${suggestionText}`,
+        suggestions: suggestions.length > 0 ? suggestions : undefined
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const normalizedPhase = phase.toUpperCase();
 
+    // Filter by element and phase
     const filteredRecords = records.filter(record => {
       const elementMatch = record.Element.toLowerCase() === normalizedElement;
       const phaseMatch = record.Phase === normalizedPhase || record.Phase === "Toutes";
@@ -151,7 +243,7 @@ serve(async (req) => {
     return new Response(JSON.stringify({
       success: true,
       data: {
-        element: element,
+        element: exactMatch,
         phase: normalizedPhase,
         count: prescriptions.length,
         prescriptions: prescriptions
