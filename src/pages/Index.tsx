@@ -1,6 +1,9 @@
 import { useState, useEffect, useMemo } from "react";
 import { PrescriptionsTable } from "@/components/PrescriptionsTable";
 import { ProjectConfig } from "@/components/ProjectConfig";
+import { PhaseComparison } from "@/components/PhaseComparison";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ClipboardList, GitCompare } from "lucide-react";
 import {
   loadGIDData,
   getUniqueElements,
@@ -69,22 +72,46 @@ const Index = () => {
           </p>
         </div>
 
-        <ProjectConfig
-          projectPhase={projectPhase}
-          element={selectedElement}
-          elements={elements}
-          elementCounts={elementCounts}
-          onProjectPhaseChange={handleProjectPhaseChange}
-          onElementChange={handleElementChange}
-          isLoadingElements={isLoadingElements}
-        />
+        <Tabs defaultValue="guide" className="space-y-6">
+          <TabsList>
+            <TabsTrigger value="guide" className="flex items-center gap-2">
+              <ClipboardList className="h-4 w-4" />
+              Cahier des Charges
+            </TabsTrigger>
+            <TabsTrigger value="compare" className="flex items-center gap-2">
+              <GitCompare className="h-4 w-4" />
+              Comparaison de Phases
+            </TabsTrigger>
+          </TabsList>
 
-        <PrescriptionsTable
-          projectPhase={projectPhase}
-          selectedElement={selectedElement}
-          gidData={gidData}
-          isConfigComplete={!!isConfigComplete}
-        />
+          <TabsContent value="guide" className="space-y-6">
+            <ProjectConfig
+              projectPhase={projectPhase}
+              element={selectedElement}
+              elements={elements}
+              elementCounts={elementCounts}
+              onProjectPhaseChange={handleProjectPhaseChange}
+              onElementChange={handleElementChange}
+              isLoadingElements={isLoadingElements}
+            />
+
+            <PrescriptionsTable
+              projectPhase={projectPhase}
+              selectedElement={selectedElement}
+              gidData={gidData}
+              isConfigComplete={!!isConfigComplete}
+            />
+          </TabsContent>
+
+          <TabsContent value="compare">
+            <PhaseComparison
+              gidData={gidData}
+              elements={elements}
+              elementCounts={elementCounts}
+              isLoadingElements={isLoadingElements}
+            />
+          </TabsContent>
+        </Tabs>
       </main>
     </div>
   );
