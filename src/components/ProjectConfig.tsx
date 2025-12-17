@@ -9,11 +9,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { PROJECT_PHASES, type ProjectPhase } from "@/lib/csv-parser";
+import { ElementCombobox } from "@/components/ElementCombobox";
 
 interface ProjectConfigProps {
   projectPhase: ProjectPhase | null;
   element: string | null;
   elements: string[];
+  elementCounts: Record<string, number>;
   onProjectPhaseChange: (phase: ProjectPhase) => void;
   onElementChange: (element: string) => void;
   isLoadingElements: boolean;
@@ -23,6 +25,7 @@ export function ProjectConfig({
   projectPhase,
   element,
   elements,
+  elementCounts,
   onProjectPhaseChange,
   onElementChange,
   isLoadingElements,
@@ -57,27 +60,17 @@ export function ProjectConfig({
             </Select>
           </div>
 
-          {/* Element Category */}
+          {/* Element Category with Combobox */}
           <div className="space-y-2">
-            <Label htmlFor="element">Catégorie d'élément *</Label>
-            <Select
-              value={element || ""}
-              onValueChange={onElementChange}
+            <Label>Catégorie d'élément *</Label>
+            <ElementCombobox
+              elements={elements}
+              value={element}
+              onChange={onElementChange}
+              elementCounts={elementCounts}
               disabled={isLoadingElements}
-            >
-              <SelectTrigger id="element">
-                <SelectValue
-                  placeholder={isLoadingElements ? "Chargement..." : "Sélectionner..."}
-                />
-              </SelectTrigger>
-              <SelectContent>
-                {elements.map((el) => (
-                  <SelectItem key={el} value={el}>
-                    {el}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              placeholder="Rechercher un élément..."
+            />
           </div>
         </div>
       </CardContent>

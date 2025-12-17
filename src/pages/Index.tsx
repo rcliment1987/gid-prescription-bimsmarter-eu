@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { PrescriptionsTable } from "@/components/PrescriptionsTable";
 import { ProjectConfig } from "@/components/ProjectConfig";
 import {
   loadGIDData,
   getUniqueElements,
+  getElementIndex,
   type ProjectPhase,
   type GIDRecord,
 } from "@/lib/csv-parser";
@@ -26,6 +27,20 @@ const Index = () => {
       })
       .finally(() => setIsLoadingElements(false));
   }, []);
+
+  // Calculate element counts from the index
+  const elementCounts = useMemo(() => {
+    const index = getElementIndex();
+    const counts: Record<string, number> = {};
+    
+    if (index) {
+      index.forEach((records, element) => {
+        counts[element] = records.length;
+      });
+    }
+    
+    return counts;
+  }, [gidData]); // Recalculate when gidData changes (after load)
 
   const handleProjectPhaseChange = (phase: ProjectPhase) => {
     setProjectPhase(phase);
@@ -58,6 +73,7 @@ const Index = () => {
           projectPhase={projectPhase}
           element={selectedElement}
           elements={elements}
+          elementCounts={elementCounts}
           onProjectPhaseChange={handleProjectPhaseChange}
           onElementChange={handleElementChange}
           isLoadingElements={isLoadingElements}
