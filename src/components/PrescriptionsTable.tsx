@@ -30,7 +30,7 @@ export function PrescriptionsTable({
     }
 
     // CSV Header
-    const headers = ["Catégorie", "Sous-catégorie", "Phase", "Type document", "Propriété", "IFC_Reference", "Revit_Param", "Nom", "IFC Type", "Catégorie Revit"];
+    const headers = ["Catégorie", "Sous-catégorie", "Phase", "Type document", "Propriété", "IFC_Reference", "Revit_Param", "Nom", "IFC Type", "Catégorie Revit", "Classification", "Descriptif"];
     const csvLines = [headers.join(";")];
 
     // CSV Data
@@ -46,6 +46,8 @@ export function PrescriptionsTable({
         `"${record.Nom}"`,
         `"${record.IFC_Type}"`,
         `"${record.Categorie_Revit}"`,
+        `"${record.Classification}"`,
+        `"${record.Descriptif}"`,
       ];
       csvLines.push(row.join(";"));
     });
@@ -135,6 +137,8 @@ export function PrescriptionsTable({
                 <TableHead className="min-w-[150px]">Revit_Param</TableHead>
                 <TableHead className="min-w-[150px]">Nom</TableHead>
                 <TableHead className="min-w-[200px]">IFC Type</TableHead>
+                <TableHead className="min-w-[150px]">Classification</TableHead>
+                <TableHead className="min-w-[200px]">Descriptif</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -159,6 +163,8 @@ export function PrescriptionsTable({
                     <TableCell className="font-mono text-xs">{record.Revit_Param || "-"}</TableCell>
                     <TableCell className="text-sm">{record.Nom || "-"}</TableCell>
                     <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Type || "-"}</TableCell>
+                    <TableCell className="text-sm">{record.Classification || "-"}</TableCell>
+                    <TableCell className="text-sm">{record.Descriptif || "-"}</TableCell>
                   </TableRow>
                 ))
               ))}
