@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { Download, FileSpreadsheet, ClipboardList, Filter, ChevronDown, Copy, FileText } from "lucide-react";
+import { useState, useMemo, useEffect, useCallback } from "react";
+import { Download, FileSpreadsheet, ClipboardList, Filter, ChevronDown, Copy, FileText, CheckCircle2, Circle, RotateCcw } from "lucide-react";
 import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Progress } from "@/components/ui/progress";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,6 +26,16 @@ interface PrescriptionsTableProps {
   isConfigComplete: boolean;
 }
 
+// Generate unique ID for each record
+const getRecordId = (record: GIDRecord): string => {
+  return `${record.Categorie}_${record.Propriete}_${record.IFC_Reference}`.replace(/\s+/g, "_");
+};
+
+// LocalStorage key generator
+const getStorageKey = (element: string | null, phase: ProjectPhase | null): string => {
+  return `checklist_${element?.replace(/\s+/g, "_")}_${phase}`;
+};
+
 export function PrescriptionsTable({
   projectPhase,
   selectedElement,
@@ -34,13 +45,62 @@ export function PrescriptionsTable({
   const [categoryFilters, setCategoryFilters] = useState<Record<string, boolean>>({
     "Classe et type IFC": true,
     "Informations alphanumériques": true,
-    "Documentation": false, // Désactivé par défaut
+    "Documentation": false,
     "Classification": true,
   });
+
+  const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
+  const [showUncheckedOnly, setShowUncheckedOnly] = useState(false);
 
   const filteredRecords = isConfigComplete && projectPhase && selectedElement
     ? filterRecords(gidData, projectPhase, selectedElement)
     : [];
+
+  // Load checked items from localStorage when element/phase changes
+  useEffect(() => {
+    if (!selectedElement || !projectPhase) return;
+    const storageKey = getStorageKey(selectedElement, projectPhase);
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      try {
+        setCheckedItems(new Set(JSON.parse(saved)));
+      } catch {
+        setCheckedItems(new Set());
+      }
+    } else {
+      setCheckedItems(new Set());
+    }
+  }, [selectedElement, projectPhase]);
+
+  // Save checked items to localStorage
+  useEffect(() => {
+    if (!selectedElement || !projectPhase) return;
+    const storageKey = getStorageKey(selectedElement, projectPhase);
+    localStorage.setItem(storageKey, JSON.stringify([...checkedItems]));
+  }, [checkedItems, selectedElement, projectPhase]);
+
+  // Toggle check for a record
+  const toggleCheck = useCallback((recordId: string) => {
+    setCheckedItems(prev => {
+      const next = new Set(prev);
+      if (next.has(recordId)) {
+        next.delete(recordId);
+      } else {
+        next.add(recordId);
+      }
+      return next;
+    });
+  }, []);
+
+  // Check/uncheck all displayed records
+  const toggleAll = useCallback((check: boolean) => {
+    if (check) {
+      const allIds = filteredRecords.map(r => getRecordId(r));
+      setCheckedItems(new Set(allIds));
+    } else {
+      setCheckedItems(new Set());
+    }
+  }, [filteredRecords]);
 
   // Calculate category counts from filtered records
   const categoryCounts = useMemo(() => {
@@ -54,11 +114,25 @@ export function PrescriptionsTable({
 
   // Apply category filter for display
   const displayedRecords = useMemo(() => {
-    return filteredRecords.filter(record => {
+    let records = filteredRecords.filter(record => {
       const cat = record.Categorie || "Autre";
       return categoryFilters[cat] !== false;
     });
-  }, [filteredRecords, categoryFilters]);
+    
+    if (showUncheckedOnly) {
+      records = records.filter(record => !checkedItems.has(getRecordId(record)));
+    }
+    
+    return records;
+  }, [filteredRecords, categoryFilters, showUncheckedOnly, checkedItems]);
+
+  // Progress calculation
+  const progressStats = useMemo(() => {
+    const total = filteredRecords.length;
+    const checked = filteredRecords.filter(r => checkedItems.has(getRecordId(r))).length;
+    const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+    return { total, checked, percentage };
+  }, [filteredRecords, checkedItems]);
 
   const toggleCategory = (category: string) => {
     setCategoryFilters(prev => ({
@@ -319,9 +393,51 @@ export function PrescriptionsTable({
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
+
+        {/* Progress Bar */}
+        <div className="pt-4 space-y-2">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">
+              Progression : <strong className="text-foreground">{progressStats.checked}/{progressStats.total}</strong> propriétés complétées
+            </span>
+            <span className={`font-medium ${progressStats.percentage === 100 ? "text-green-600" : "text-primary"}`}>
+              {progressStats.percentage}%
+            </span>
+          </div>
+          <Progress value={progressStats.percentage} className="h-2" />
+        </div>
+
+        {/* Checklist Controls */}
+        <div className="flex items-center gap-2 pt-3 flex-wrap">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => toggleAll(true)}
+            disabled={progressStats.checked === progressStats.total}
+          >
+            <CheckCircle2 className="h-4 w-4 mr-1" />
+            Tout cocher
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => toggleAll(false)}
+            disabled={progressStats.checked === 0}
+          >
+            <RotateCcw className="h-4 w-4 mr-1" />
+            Réinitialiser
+          </Button>
+          <label className="flex items-center gap-2 px-3 py-1.5 rounded-md border bg-background hover:bg-muted/50 cursor-pointer transition-colors ml-auto">
+            <Checkbox
+              checked={showUncheckedOnly}
+              onCheckedChange={(checked) => setShowUncheckedOnly(!!checked)}
+            />
+            <span className="text-sm whitespace-nowrap">Afficher non cochées uniquement</span>
+          </label>
+        </div>
         
         {/* Category Filters */}
-        <div className="flex items-center gap-2 pt-4 flex-wrap">
+        <div className="flex items-center gap-2 pt-3 flex-wrap">
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             <Filter className="h-4 w-4" />
             <span>Filtrer :</span>
@@ -356,6 +472,7 @@ export function PrescriptionsTable({
             <Table>
               <TableHeader>
                 <TableRow>
+                  <TableHead className="w-[50px]">✓</TableHead>
                   <TableHead className="min-w-[120px]">Catégorie</TableHead>
                   <TableHead className="min-w-[100px]">Type doc.</TableHead>
                   <TableHead className="min-w-[150px]">Propriété</TableHead>
@@ -369,29 +486,48 @@ export function PrescriptionsTable({
               </TableHeader>
               <TableBody>
                 {Object.entries(groupedRecords).map(([group, records]) => (
-                  records.map((record, index) => (
-                    <TableRow key={`${group}-${index}`}>
-                      <TableCell>
-                        <Badge variant="outline" className="text-xs whitespace-nowrap">
-                          {record.Categorie}
-                        </Badge>
-                      </TableCell>
-                      <TableCell className="text-sm">
-                        {record.TypeDocument && (
-                          <Badge variant="secondary" className="text-xs">
-                            {record.TypeDocument}
+                  records.map((record, index) => {
+                    const recordId = getRecordId(record);
+                    const isChecked = checkedItems.has(recordId);
+                    return (
+                      <TableRow 
+                        key={`${group}-${index}`}
+                        className={isChecked ? "bg-muted/30" : ""}
+                      >
+                        <TableCell>
+                          <button
+                            onClick={() => toggleCheck(recordId)}
+                            className="flex items-center justify-center w-6 h-6 rounded hover:bg-muted transition-colors"
+                          >
+                            {isChecked ? (
+                              <CheckCircle2 className="h-5 w-5 text-green-600" />
+                            ) : (
+                              <Circle className="h-5 w-5 text-muted-foreground" />
+                            )}
+                          </button>
+                        </TableCell>
+                        <TableCell>
+                          <Badge variant="outline" className={`text-xs whitespace-nowrap ${isChecked ? "opacity-60" : ""}`}>
+                            {record.Categorie}
                           </Badge>
-                        )}
-                      </TableCell>
-                      <TableCell className="font-medium">{record.Propriete || "-"}</TableCell>
-                      <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Reference || "-"}</TableCell>
-                      <TableCell className="font-mono text-xs">{record.Revit_Param || "-"}</TableCell>
-                      <TableCell className="text-sm">{record.Nom || "-"}</TableCell>
-                      <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Type || "-"}</TableCell>
-                      <TableCell className="text-sm">{record.Classification || "-"}</TableCell>
-                      <TableCell className="text-sm">{record.Descriptif || "-"}</TableCell>
-                    </TableRow>
-                  ))
+                        </TableCell>
+                        <TableCell className={`text-sm ${isChecked ? "opacity-60" : ""}`}>
+                          {record.TypeDocument && (
+                            <Badge variant="secondary" className="text-xs">
+                              {record.TypeDocument}
+                            </Badge>
+                          )}
+                        </TableCell>
+                        <TableCell className={`font-medium ${isChecked ? "opacity-60 line-through" : ""}`}>{record.Propriete || "-"}</TableCell>
+                        <TableCell className={`font-mono text-xs text-muted-foreground ${isChecked ? "opacity-60" : ""}`}>{record.IFC_Reference || "-"}</TableCell>
+                        <TableCell className={`font-mono text-xs ${isChecked ? "opacity-60" : ""}`}>{record.Revit_Param || "-"}</TableCell>
+                        <TableCell className={`text-sm ${isChecked ? "opacity-60" : ""}`}>{record.Nom || "-"}</TableCell>
+                        <TableCell className={`font-mono text-xs text-muted-foreground ${isChecked ? "opacity-60" : ""}`}>{record.IFC_Type || "-"}</TableCell>
+                        <TableCell className={`text-sm ${isChecked ? "opacity-60" : ""}`}>{record.Classification || "-"}</TableCell>
+                        <TableCell className={`text-sm ${isChecked ? "opacity-60" : ""}`}>{record.Descriptif || "-"}</TableCell>
+                      </TableRow>
+                    );
+                  })
                 ))}
               </TableBody>
             </Table>
