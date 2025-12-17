@@ -1,10 +1,20 @@
 import { useState, useMemo } from "react";
-import { Download, FileSpreadsheet, ClipboardList, Filter } from "lucide-react";
+import { Download, FileSpreadsheet, ClipboardList, Filter, ChevronDown, Copy, FileText } from "lucide-react";
+import * as XLSX from "xlsx";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { filterRecords, type GIDRecord, type ProjectPhase } from "@/lib/csv-parser";
 import { toast } from "sonner";
 
@@ -57,17 +67,45 @@ export function PrescriptionsTable({
     }));
   };
 
+  // Copy to clipboard
+  const copyToClipboard = () => {
+    if (displayedRecords.length === 0) {
+      toast.error("Aucune donnée à copier");
+      return;
+    }
+
+    const headers = ["Catégorie", "Type doc.", "Propriété", "Paramètre IFC", "Paramètre Revit", "Nom", "IFC Type", "Classification", "Description"];
+    const text = [
+      headers.join("\t"),
+      ...displayedRecords.map(record =>
+        [
+          record.Categorie,
+          record.TypeDocument,
+          record.Propriete,
+          record.IFC_Reference,
+          record.Revit_Param,
+          record.Nom,
+          record.IFC_Type,
+          record.Classification,
+          record.Descriptif,
+        ].join("\t")
+      )
+    ].join("\n");
+
+    navigator.clipboard.writeText(text);
+    toast.success("Copié dans le presse-papier !");
+  };
+
+  // Export to CSV
   const handleExportCSV = () => {
     if (displayedRecords.length === 0) {
       toast.error("Aucune donnée à exporter");
       return;
     }
 
-    // CSV Header
     const headers = ["Catégorie", "Phase", "Type document", "Propriété", "Paramètre IFC", "Paramètre Revit_ENG", "Nom", "IfcExportAs.IfcExportTYPE", "Classification", "Numéro - Description"];
     const csvLines = [headers.join(";")];
 
-    // CSV Data - export only displayed records
     displayedRecords.forEach((record) => {
       const row = [
         `"${record.Categorie}"`,
@@ -96,7 +134,105 @@ export function PrescriptionsTable({
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 
-    toast.success("Fiche de prescriptions téléchargée");
+    toast.success("Fichier CSV téléchargé");
+  };
+
+  // Export to Excel
+  const exportToExcel = () => {
+    if (displayedRecords.length === 0) {
+      toast.error("Aucune donnée à exporter");
+      return;
+    }
+
+    const data = displayedRecords.map(record => ({
+      "Catégorie": record.Categorie,
+      "Type document": record.TypeDocument,
+      "Propriété": record.Propriete,
+      "Paramètre IFC": record.IFC_Reference,
+      "Paramètre Revit": record.Revit_Param,
+      "Nom": record.Nom,
+      "IFC Type": record.IFC_Type,
+      "Classification": record.Classification,
+      "Description": record.Descriptif,
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(data);
+
+    // Set column widths
+    worksheet["!cols"] = [
+      { wch: 25 }, // Catégorie
+      { wch: 15 }, // Type document
+      { wch: 30 }, // Propriété
+      { wch: 35 }, // Paramètre IFC
+      { wch: 30 }, // Paramètre Revit
+      { wch: 20 }, // Nom
+      { wch: 40 }, // IFC Type
+      { wch: 20 }, // Classification
+      { wch: 40 }, // Description
+    ];
+
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, selectedElement?.substring(0, 31) || "Prescriptions");
+    XLSX.writeFile(workbook, `Prescriptions_GID_${selectedElement?.replace(/\s+/g, "_")}_${projectPhase}.xlsx`);
+
+    toast.success("Fichier Excel téléchargé");
+  };
+
+  // Export to PDF
+  const exportToPDF = () => {
+    if (displayedRecords.length === 0) {
+      toast.error("Aucune donnée à exporter");
+      return;
+    }
+
+    const doc = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
+
+    // Header
+    doc.setFontSize(18);
+    doc.setTextColor(37, 99, 235); // Primary blue
+    doc.text("BIMsmarter - Prescriptions GID", 14, 15);
+
+    doc.setFontSize(11);
+    doc.setTextColor(100, 100, 100);
+    doc.text(`Élément: ${selectedElement}`, 14, 24);
+    doc.text(`Phase: ${projectPhase}`, 14, 30);
+    doc.text(`Date: ${new Date().toLocaleDateString("fr-FR")}`, 14, 36);
+    doc.text(`${displayedRecords.length} prescriptions`, 200, 30);
+
+    // Table
+    autoTable(doc, {
+      startY: 42,
+      head: [["Catégorie", "Type doc.", "Propriété", "Paramètre IFC", "Paramètre Revit", "Classification"]],
+      body: displayedRecords.map(record => [
+        record.Categorie,
+        record.TypeDocument,
+        record.Propriete,
+        record.IFC_Reference,
+        record.Revit_Param,
+        record.Classification,
+      ]),
+      theme: "grid",
+      styles: { fontSize: 8, cellPadding: 2 },
+      headStyles: { fillColor: [37, 99, 235], textColor: 255, fontStyle: "bold" },
+      alternateRowStyles: { fillColor: [245, 247, 250] },
+      margin: { left: 14, right: 14 },
+      didDrawPage: (data) => {
+        // Footer with pagination
+        const pageCount = doc.getNumberOfPages();
+        doc.setFontSize(8);
+        doc.setTextColor(150);
+        doc.text(
+          `Page ${data.pageNumber} / ${pageCount}`,
+          doc.internal.pageSize.width / 2,
+          doc.internal.pageSize.height - 10,
+          { align: "center" }
+        );
+      },
+    });
+
+    doc.save(`Prescriptions_GID_${selectedElement?.replace(/\s+/g, "_")}_${projectPhase}.pdf`);
+
+    toast.success("Fichier PDF téléchargé");
   };
 
   // Empty state when config is not complete
@@ -154,10 +290,34 @@ export function PrescriptionsTable({
               {displayedRecords.length}/{filteredRecords.length} propriétés pour <strong>{selectedElement}</strong> en phase <strong>{projectPhase}</strong>
             </CardDescription>
           </div>
-          <Button variant="outline" onClick={handleExportCSV}>
-            <Download className="h-4 w-4 mr-2" />
-            Télécharger la Fiche (.CSV)
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">
+                <Download className="h-4 w-4 mr-2" />
+                Exporter
+                <ChevronDown className="h-4 w-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={copyToClipboard}>
+                <Copy className="h-4 w-4 mr-2" />
+                Copier dans le presse-papier
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={handleExportCSV}>
+                <FileText className="h-4 w-4 mr-2" />
+                Exporter en CSV
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={exportToExcel}>
+                <FileSpreadsheet className="h-4 w-4 mr-2" />
+                Exporter en Excel (.xlsx)
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={exportToPDF}>
+                <FileText className="h-4 w-4 mr-2" />
+                Exporter en PDF
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
         
         {/* Category Filters */}
