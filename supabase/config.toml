@@ -1,1 +1,10 @@
 project_id = "xdzsqiemmiplxckfcsar"
+
+[functions.get-prescriptions]
+verify_jwt = false
+
+[functions.get-elements]
+verify_jwt = false
+
+[functions.get-phases]
+verify_jwt = false
