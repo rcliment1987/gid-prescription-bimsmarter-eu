@@ -4,42 +4,28 @@ import { ProjectConfig } from "@/components/ProjectConfig";
 import {
   loadGIDData,
   getUniqueElements,
-  type IFCVersion,
   type ProjectPhase,
   type GIDRecord,
 } from "@/lib/csv-parser";
 
 const Index = () => {
-  const [ifcVersion, setIfcVersion] = useState<IFCVersion | null>(null);
   const [projectPhase, setProjectPhase] = useState<ProjectPhase | null>(null);
   const [selectedElement, setSelectedElement] = useState<string | null>(null);
   const [elements, setElements] = useState<string[]>([]);
   const [gidData, setGidData] = useState<GIDRecord[]>([]);
-  const [isLoadingElements, setIsLoadingElements] = useState(false);
+  const [isLoadingElements, setIsLoadingElements] = useState(true);
 
-  // Load elements when IFC version changes
+  // Load elements on mount
   useEffect(() => {
-    if (!ifcVersion) {
-      setElements([]);
-      setSelectedElement(null);
-      return;
-    }
-
     setIsLoadingElements(true);
-    loadGIDData(ifcVersion)
+    loadGIDData()
       .then((data) => {
         setGidData(data);
         const uniqueElements = getUniqueElements(data);
         setElements(uniqueElements);
-        setSelectedElement(null);
       })
       .finally(() => setIsLoadingElements(false));
-  }, [ifcVersion]);
-
-  const handleIfcVersionChange = (version: IFCVersion) => {
-    setIfcVersion(version);
-    setSelectedElement(null);
-  };
+  }, []);
 
   const handleProjectPhaseChange = (phase: ProjectPhase) => {
     setProjectPhase(phase);
@@ -49,7 +35,7 @@ const Index = () => {
     setSelectedElement(element);
   };
 
-  const isConfigComplete = ifcVersion && projectPhase && selectedElement;
+  const isConfigComplete = projectPhase && selectedElement;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -69,18 +55,15 @@ const Index = () => {
         </div>
 
         <ProjectConfig
-          ifcVersion={ifcVersion}
           projectPhase={projectPhase}
           element={selectedElement}
           elements={elements}
-          onIfcVersionChange={handleIfcVersionChange}
           onProjectPhaseChange={handleProjectPhaseChange}
           onElementChange={handleElementChange}
           isLoadingElements={isLoadingElements}
         />
 
         <MappingGenerator
-          ifcVersion={ifcVersion}
           projectPhase={projectPhase}
           selectedElement={selectedElement}
           gidData={gidData}

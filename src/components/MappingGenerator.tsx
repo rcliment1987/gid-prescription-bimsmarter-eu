@@ -10,7 +10,6 @@ import {
   generateMapping,
   parseUserParams,
   type GIDRecord,
-  type IFCVersion,
   type MappingResult,
   type ProjectPhase,
 } from "@/lib/csv-parser";
@@ -18,7 +17,6 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 interface MappingGeneratorProps {
-  ifcVersion: IFCVersion | null;
   projectPhase: ProjectPhase | null;
   selectedElement: string | null;
   gidData: GIDRecord[];
@@ -26,7 +24,6 @@ interface MappingGeneratorProps {
 }
 
 export function MappingGenerator({
-  ifcVersion,
   projectPhase,
   selectedElement,
   gidData,
@@ -74,11 +71,9 @@ export function MappingGenerator({
     }
 
     // Format: Pset_Name [TAB] Ifc_Property_Name [TAB] Revit_Parameter_Name
-    // Using IFC_Reference as Pset_Name and officialRevitParam
     const lines = mappingResults
       .filter((r) => r.isMatched)
       .map((r) => {
-        // Extract Pset from IFC_Reference (e.g., "Pset_WallCommon.FireRating" -> "Pset_WallCommon")
         const parts = r.ifcReference.split(".");
         const pset = parts.length > 1 ? parts[0] : r.ifcReference;
         return `${pset}\t${r.ifcReference}\t${r.revitParam}`;
@@ -90,7 +85,7 @@ export function MappingGenerator({
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = `mapping_${selectedElement?.replace(/\s+/g, "_") || "export"}_${ifcVersion?.replace(/\s+/g, "")}_${projectPhase}_GID.txt`;
+    link.download = `mapping_${selectedElement?.replace(/\s+/g, "_") || "export"}_${projectPhase}_GID.txt`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -208,7 +203,7 @@ export function MappingGenerator({
             <Building2 className="h-12 w-12 text-muted-foreground/50 mb-4" />
             <h3 className="text-lg font-medium">Configurez votre projet</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              Sélectionnez la version IFC, la phase et la catégorie d'élément pour commencer
+              Sélectionnez la phase et la catégorie d'élément pour commencer
             </p>
           </CardContent>
         </Card>
