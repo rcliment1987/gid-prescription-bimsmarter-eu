@@ -9,31 +9,23 @@ export interface GIDRecord {
   Requis: string;
 }
 
-export type IFCVersion = "IFC 2x3" | "IFC 4";
 export type ProjectPhase = "APS" | "APD" | "PDE" | "EXE" | "EXP";
 
-export const IFC_VERSIONS: IFCVersion[] = ["IFC 2x3", "IFC 4"];
 export const PROJECT_PHASES: ProjectPhase[] = ["APS", "APD", "PDE", "EXE", "EXP"];
 
-const CSV_PATHS: Record<IFCVersion, string> = {
-  "IFC 2x3": "/data/GID_IFC2x3.csv",
-  "IFC 4": "/data/GID_IFC4.csv",
-};
+const CSV_PATH = "/data/GID_DATABASE.csv";
 
-let cachedData: Record<IFCVersion, GIDRecord[] | null> = {
-  "IFC 2x3": null,
-  "IFC 4": null,
-};
+let cachedData: GIDRecord[] | null = null;
 
-export async function loadGIDData(version: IFCVersion): Promise<GIDRecord[]> {
-  if (cachedData[version]) {
-    return cachedData[version]!;
+export async function loadGIDData(): Promise<GIDRecord[]> {
+  if (cachedData) {
+    return cachedData;
   }
 
-  const response = await fetch(CSV_PATHS[version]);
+  const response = await fetch(CSV_PATH);
   const text = await response.text();
   const records = parseCSV(text);
-  cachedData[version] = records;
+  cachedData = records;
   return records;
 }
 
@@ -41,44 +33,24 @@ function parseCSV(text: string): GIDRecord[] {
   const lines = text.split("\n").filter(line => line.trim());
   if (lines.length === 0) return [];
 
-  // Detect separator from header line
-  const headerLine = lines[0];
-  const separator = headerLine.includes(';') ? ';' : ',';
-  const isCommaFormat = separator === ',';
-  
   // Skip header line (first line)
   const dataLines = lines.slice(1);
   
   return dataLines.map(line => {
-    const cols = isCommaFormat ? parseCSVLine(line) : line.split(separator);
+    // Parse comma-separated values, handling quoted fields
+    const cols = parseCSVLine(line);
     
-    if (isCommaFormat) {
-      // New comma-separated format (IFC2x3 new file)
-      // Columns: Element, Categorie, Sous_categorie, Phase, Type de document, Propriété, IFC_Reference, Revit_Param, ...
-      return {
-        Element: cols[0]?.trim() || "",
-        Categorie: cols[1]?.trim() || "",
-        Sous_categorie: cols[2]?.trim() || "",
-        Phase: cols[3]?.trim() || "",
-        Propriete: cols[5]?.trim() || "", // "Propriété" column (index 5)
-        IFC_Reference: cols[6]?.trim() || "",
-        Revit_Param: cols[7]?.trim() || "",
-        Requis: cols[4]?.trim() || "", // "Type de document"
-      };
-    } else {
-      // Semicolon-separated format (IFC4 file)
-      // Columns: Element;Categorie;Sous_categorie;Phase;Propriété;IFC_Reference;Revit_Param;Version_IFC;Requis
-      return {
-        Element: cols[0]?.trim() || "",
-        Categorie: cols[1]?.trim() || "",
-        Sous_categorie: cols[2]?.trim() || "",
-        Phase: cols[3]?.trim() || "",
-        Propriete: cols[4]?.trim() || "",
-        IFC_Reference: cols[5]?.trim() || "",
-        Revit_Param: cols[6]?.trim() || "",
-        Requis: cols[8]?.trim() || "",
-      };
-    }
+    // Columns: Element, Categorie, Sous_categorie, Phase, Type de document, Propriété, IFC_Reference, Revit_Param, ...
+    return {
+      Element: cols[0]?.trim() || "",
+      Categorie: cols[1]?.trim() || "",
+      Sous_categorie: cols[2]?.trim() || "",
+      Phase: cols[3]?.trim() || "",
+      Propriete: cols[5]?.trim() || "", // "Propriété" column (index 5)
+      IFC_Reference: cols[6]?.trim() || "",
+      Revit_Param: cols[7]?.trim() || "",
+      Requis: cols[4]?.trim() || "", // "Type de document"
+    };
   }).filter(record => record.Element);
 }
 
