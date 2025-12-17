@@ -117,37 +117,37 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-bimsmarter">
-      <header className="sticky top-0 z-10 flex h-14 items-center justify-between gap-4 border-b border-[hsl(199,89%,48%,0.2)] glass-panel px-6">
+      <header className="sticky top-0 z-10 flex h-14 items-center justify-between gap-2 sm:gap-4 border-b border-[hsl(199,89%,48%,0.2)] glass-panel px-4 md:px-6">
         <a
           href="https://bimsmarter.eu"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity min-w-0"
         >
-          <img src={bimSmarterLogo} alt="BIMsmarter" className="h-8 w-auto rounded" />
-          <span className="text-sm text-muted-foreground">| Guide de Prescriptions GID</span>
+          <img src={bimSmarterLogo} alt="BIMsmarter" className="h-7 sm:h-8 w-auto rounded flex-shrink-0" />
+          <span className="text-xs sm:text-sm text-muted-foreground truncate hidden sm:inline">| Guide de Prescriptions GID</span>
         </a>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="h-9 w-9"
+            className="h-9 w-9 min-w-[44px] min-h-[44px]"
           >
             <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
           <Link to="/api-docs">
-            <Button variant="outline" size="sm" className="flex items-center gap-2 border-[hsl(199,89%,48%,0.3)] hover:bg-[hsl(199,89%,48%,0.1)]">
+            <Button variant="outline" size="sm" className="flex items-center gap-2 border-[hsl(199,89%,48%,0.3)] hover:bg-[hsl(199,89%,48%,0.1)] min-h-[44px] px-2 sm:px-3">
               <Code2 className="h-4 w-4" />
-              API & Scripts
+              <span className="hidden sm:inline">API & Scripts</span>
             </Button>
           </Link>
         </div>
       </header>
 
-      <main className="flex-1 p-6 space-y-6">
+      <main className="flex-1 p-4 md:p-6 space-y-4 md:space-y-6">
         {/* Loading Progress */}
         {isLoadingElements && loadingProgress < 100 && (
           <div className="space-y-2">
