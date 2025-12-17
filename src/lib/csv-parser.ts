@@ -3,10 +3,15 @@ export interface GIDRecord {
   Categorie: string;
   Sous_categorie: string;
   Phase: string;
+  TypeDocument: string;
   Propriete: string;
   IFC_Reference: string;
   Revit_Param: string;
-  Requis: string;
+  Nom: string;
+  IFC_Type: string;
+  Categorie_Revit: string;
+  Classification: string;
+  Descriptif: string;
 }
 
 export type ProjectPhase = "APS" | "APD" | "PDE" | "EXE" | "EXP";
@@ -40,16 +45,21 @@ function parseCSV(text: string): GIDRecord[] {
     // Parse comma-separated values, handling quoted fields
     const cols = parseCSVLine(line);
     
-    // Columns: Element, Categorie, Sous_categorie, Phase, Type de document, Propriété, IFC_Reference, Revit_Param, ...
+    // Columns: Element, Categorie, Sous_categorie, Phase, Type de document, Propriété, IFC_Reference, Revit_Param, Nom, IFC Type, Catégorie Revit, Classification, Descriptif
     return {
       Element: cols[0]?.trim() || "",
       Categorie: cols[1]?.trim() || "",
       Sous_categorie: cols[2]?.trim() || "",
       Phase: cols[3]?.trim() || "",
-      Propriete: cols[5]?.trim() || "", // "Propriété" column (index 5)
+      TypeDocument: cols[4]?.trim() || "",
+      Propriete: cols[5]?.trim() || "",
       IFC_Reference: cols[6]?.trim() || "",
       Revit_Param: cols[7]?.trim() || "",
-      Requis: cols[4]?.trim() || "", // "Type de document"
+      Nom: cols[8]?.trim() || "",
+      IFC_Type: cols[9]?.trim() || "",
+      Categorie_Revit: cols[10]?.trim() || "",
+      Classification: cols[11]?.trim() || "",
+      Descriptif: cols[12]?.trim() || "",
     };
   }).filter(record => record.Element);
 }
@@ -102,7 +112,7 @@ export interface MappingResult {
   revitParam: string;
   ifcReference: string;
   officialRevitParam: string;
-  requis: string;
+  typeDocument: string;
   isMatched: boolean;
   propriete: string;
 }
@@ -132,7 +142,7 @@ export function generateMapping(
         revitParam: param,
         ifcReference: match.IFC_Reference,
         officialRevitParam: match.Revit_Param,
-        requis: match.Requis,
+        typeDocument: match.TypeDocument,
         isMatched: true,
         propriete: match.Propriete,
       };
@@ -142,7 +152,7 @@ export function generateMapping(
       revitParam: param,
       ifcReference: "",
       officialRevitParam: "",
-      requis: "",
+      typeDocument: "",
       isMatched: false,
       propriete: "",
     };
