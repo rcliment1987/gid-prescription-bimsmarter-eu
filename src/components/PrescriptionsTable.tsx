@@ -1,8 +1,10 @@
-import { Download, FileSpreadsheet, ClipboardList } from "lucide-react";
+import { useState, useMemo } from "react";
+import { Download, FileSpreadsheet, ClipboardList, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Checkbox } from "@/components/ui/checkbox";
 import { filterRecords, type GIDRecord, type ProjectPhase } from "@/lib/csv-parser";
 import { toast } from "sonner";
 
@@ -19,12 +21,44 @@ export function PrescriptionsTable({
   gidData,
   isConfigComplete,
 }: PrescriptionsTableProps) {
+  const [categoryFilters, setCategoryFilters] = useState<Record<string, boolean>>({
+    "Classe et type IFC": true,
+    "Informations alphanumériques": true,
+    "Documentation": false, // Désactivé par défaut
+    "Classification": true,
+  });
+
   const filteredRecords = isConfigComplete && projectPhase && selectedElement
     ? filterRecords(gidData, projectPhase, selectedElement)
     : [];
 
+  // Calculate category counts from filtered records
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    filteredRecords.forEach(record => {
+      const cat = record.Categorie || "Autre";
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+    return counts;
+  }, [filteredRecords]);
+
+  // Apply category filter for display
+  const displayedRecords = useMemo(() => {
+    return filteredRecords.filter(record => {
+      const cat = record.Categorie || "Autre";
+      return categoryFilters[cat] !== false;
+    });
+  }, [filteredRecords, categoryFilters]);
+
+  const toggleCategory = (category: string) => {
+    setCategoryFilters(prev => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
+
   const handleExportCSV = () => {
-    if (filteredRecords.length === 0) {
+    if (displayedRecords.length === 0) {
       toast.error("Aucune donnée à exporter");
       return;
     }
@@ -33,8 +67,8 @@ export function PrescriptionsTable({
     const headers = ["Catégorie", "Phase", "Type document", "Propriété", "Paramètre IFC", "Paramètre Revit_ENG", "Nom", "IfcExportAs.IfcExportTYPE", "Classification", "Numéro - Description"];
     const csvLines = [headers.join(";")];
 
-    // CSV Data
-    filteredRecords.forEach((record) => {
+    // CSV Data - export only displayed records
+    displayedRecords.forEach((record) => {
       const row = [
         `"${record.Categorie}"`,
         `"${record.Phase}"`,
@@ -95,13 +129,16 @@ export function PrescriptionsTable({
     );
   }
 
-  // Group records by Categorie
-  const groupedRecords = filteredRecords.reduce((acc, record) => {
+  // Group displayed records by Categorie
+  const groupedRecords = displayedRecords.reduce((acc, record) => {
     const group = record.Categorie || "Autre";
     if (!acc[group]) acc[group] = [];
     acc[group].push(record);
     return acc;
   }, {} as Record<string, GIDRecord[]>);
+
+  // Get all categories for filter UI
+  const allCategories = Object.keys(categoryCounts).sort();
 
   return (
     <Card>
@@ -113,7 +150,7 @@ export function PrescriptionsTable({
               Cahier des Charges GID
             </CardTitle>
             <CardDescription>
-              {filteredRecords.length} propriétés pour <strong>{selectedElement}</strong> en phase <strong>{projectPhase}</strong>
+              {displayedRecords.length}/{filteredRecords.length} propriétés pour <strong>{selectedElement}</strong> en phase <strong>{projectPhase}</strong>
             </CardDescription>
           </div>
           <Button variant="outline" onClick={handleExportCSV}>
@@ -121,52 +158,84 @@ export function PrescriptionsTable({
             Télécharger la Fiche (.CSV)
           </Button>
         </div>
+        
+        {/* Category Filters */}
+        <div className="flex items-center gap-2 pt-4 flex-wrap">
+          <div className="flex items-center gap-1 text-sm text-muted-foreground">
+            <Filter className="h-4 w-4" />
+            <span>Filtrer :</span>
+          </div>
+          {allCategories.map(category => (
+            <label
+              key={category}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-md border bg-background hover:bg-muted/50 cursor-pointer transition-colors"
+            >
+              <Checkbox
+                checked={categoryFilters[category] !== false}
+                onCheckedChange={() => toggleCategory(category)}
+              />
+              <span className="text-sm whitespace-nowrap">
+                {category} ({categoryCounts[category]})
+              </span>
+            </label>
+          ))}
+        </div>
       </CardHeader>
       <CardContent>
-        <div className="rounded-md border overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="min-w-[120px]">Catégorie</TableHead>
-                <TableHead className="min-w-[100px]">Type doc.</TableHead>
-                <TableHead className="min-w-[150px]">Propriété</TableHead>
-                <TableHead className="min-w-[200px]">Paramètre IFC</TableHead>
-                <TableHead className="min-w-[180px]">Paramètre Revit_ENG</TableHead>
-                <TableHead className="min-w-[150px]">Nom</TableHead>
-                <TableHead className="min-w-[250px]">IfcExportAs.IfcExportTYPE</TableHead>
-                <TableHead className="min-w-[150px]">Classification</TableHead>
-                <TableHead className="min-w-[200px]">Numéro - Description</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {Object.entries(groupedRecords).map(([group, records]) => (
-                records.map((record, index) => (
-                  <TableRow key={`${group}-${index}`}>
-                    <TableCell>
-                      <Badge variant="outline" className="text-xs whitespace-nowrap">
-                        {record.Categorie}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="text-sm">
-                      {record.TypeDocument && (
-                        <Badge variant="secondary" className="text-xs">
-                          {record.TypeDocument}
+        {displayedRecords.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-12 text-center">
+            <Filter className="h-10 w-10 text-muted-foreground/50 mb-3" />
+            <h3 className="font-medium">Aucune propriété affichée</h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              Activez au moins une catégorie pour voir les prescriptions
+            </p>
+          </div>
+        ) : (
+          <div className="rounded-md border overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="min-w-[120px]">Catégorie</TableHead>
+                  <TableHead className="min-w-[100px]">Type doc.</TableHead>
+                  <TableHead className="min-w-[150px]">Propriété</TableHead>
+                  <TableHead className="min-w-[200px]">Paramètre IFC</TableHead>
+                  <TableHead className="min-w-[180px]">Paramètre Revit_ENG</TableHead>
+                  <TableHead className="min-w-[150px]">Nom</TableHead>
+                  <TableHead className="min-w-[250px]">IfcExportAs.IfcExportTYPE</TableHead>
+                  <TableHead className="min-w-[150px]">Classification</TableHead>
+                  <TableHead className="min-w-[200px]">Numéro - Description</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {Object.entries(groupedRecords).map(([group, records]) => (
+                  records.map((record, index) => (
+                    <TableRow key={`${group}-${index}`}>
+                      <TableCell>
+                        <Badge variant="outline" className="text-xs whitespace-nowrap">
+                          {record.Categorie}
                         </Badge>
-                      )}
-                    </TableCell>
-                    <TableCell className="font-medium">{record.Propriete || "-"}</TableCell>
-                    <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Reference || "-"}</TableCell>
-                    <TableCell className="font-mono text-xs">{record.Revit_Param || "-"}</TableCell>
-                    <TableCell className="text-sm">{record.Nom || "-"}</TableCell>
-                    <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Type || "-"}</TableCell>
-                    <TableCell className="text-sm">{record.Classification || "-"}</TableCell>
-                    <TableCell className="text-sm">{record.Descriptif || "-"}</TableCell>
-                  </TableRow>
-                ))
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+                      </TableCell>
+                      <TableCell className="text-sm">
+                        {record.TypeDocument && (
+                          <Badge variant="secondary" className="text-xs">
+                            {record.TypeDocument}
+                          </Badge>
+                        )}
+                      </TableCell>
+                      <TableCell className="font-medium">{record.Propriete || "-"}</TableCell>
+                      <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Reference || "-"}</TableCell>
+                      <TableCell className="font-mono text-xs">{record.Revit_Param || "-"}</TableCell>
+                      <TableCell className="text-sm">{record.Nom || "-"}</TableCell>
+                      <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Type || "-"}</TableCell>
+                      <TableCell className="text-sm">{record.Classification || "-"}</TableCell>
+                      <TableCell className="text-sm">{record.Descriptif || "-"}</TableCell>
+                    </TableRow>
+                  ))
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
