@@ -138,7 +138,7 @@ export function GIDChatbot({ selectedElement, projectPhase, prescriptions }: GID
           <ScrollArea className="flex-1 p-4" ref={scrollRef}>
             <div className="space-y-4">
               {messages.length === 0 && (
-                <div className="text-center text-muted-foreground py-8">
+                <div className="text-center text-slate-300 py-6">
                   <Bot className="h-12 w-12 mx-auto mb-3 opacity-50" />
                   <p className="text-sm">
                     Posez vos questions sur le standard GID, les prescriptions Revit ou l'IFC.
@@ -148,6 +148,27 @@ export function GIDChatbot({ selectedElement, projectPhase, prescriptions }: GID
                       Contexte : {selectedElement} ({prescriptions.length} prescriptions)
                     </p>
                   )}
+                  
+                  {/* Predefined questions */}
+                  <div className="mt-6 space-y-2">
+                    <p className="text-xs text-slate-400 mb-3">Questions suggérées :</p>
+                    {[
+                      "Quelles propriétés sont obligatoires ?",
+                      "Comment configurer l'export IFC ?",
+                      "Quelle est la différence entre IFC_Reference et Revit_Param ?",
+                      "Comment renseigner la résistance au feu ?",
+                    ].map((question, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setInput(question);
+                        }}
+                        className="block w-full text-left text-xs px-3 py-2 rounded-lg bg-[hsl(222,47%,18%)] hover:bg-[hsl(222,47%,22%)] text-slate-300 hover:text-white transition-colors border border-[hsl(199,89%,48%,0.2)]"
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
 
@@ -165,7 +186,7 @@ export function GIDChatbot({ selectedElement, projectPhase, prescriptions }: GID
                     className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${
                       msg.role === "user"
                         ? "bg-[hsl(199,89%,48%)] text-white"
-                        : "bg-[hsl(222,47%,18%)] text-foreground"
+                        : "bg-[hsl(222,47%,18%)] text-white"
                     }`}
                   >
                     <p className="whitespace-pre-wrap">{msg.content}</p>
@@ -204,7 +225,7 @@ export function GIDChatbot({ selectedElement, projectPhase, prescriptions }: GID
                 onKeyDown={handleKeyDown}
                 placeholder="Posez votre question..."
                 disabled={isLoading}
-                className="flex-1 bg-[hsl(222,47%,18%)] border-[hsl(199,89%,48%,0.3)]"
+                className="flex-1 bg-[hsl(222,47%,18%)] border-[hsl(199,89%,48%,0.3)] text-white placeholder:text-slate-400"
               />
               <Button
                 onClick={sendMessage}

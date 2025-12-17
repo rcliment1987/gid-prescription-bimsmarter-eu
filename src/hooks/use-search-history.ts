@@ -51,6 +51,13 @@ export function useSearchHistory() {
     saveHistory(newHistory);
   };
 
+  const removeFromHistory = (element: string, phase: string) => {
+    const newHistory = history.filter(
+      (item) => !(item.element === element && item.phase === phase)
+    );
+    saveHistory(newHistory);
+  };
+
   const clearHistory = () => {
     saveHistory([]);
   };
@@ -58,6 +65,7 @@ export function useSearchHistory() {
   return {
     history,
     addToHistory,
+    removeFromHistory,
     clearHistory,
   };
 }
