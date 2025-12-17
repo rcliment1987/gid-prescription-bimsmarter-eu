@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MappingGenerator } from "@/components/MappingGenerator";
+import { PrescriptionsTable } from "@/components/PrescriptionsTable";
 import { ProjectConfig } from "@/components/ProjectConfig";
 import {
   loadGIDData,
@@ -42,15 +42,15 @@ const Index = () => {
       <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6">
         <div className="flex items-center gap-2">
           <span className="text-lg font-semibold">BIMsmarter</span>
-          <span className="text-sm text-muted-foreground">| GID Mapping Tool</span>
+          <span className="text-sm text-muted-foreground">| Guide de Prescriptions GID</span>
         </div>
       </header>
 
       <main className="flex-1 p-6 space-y-6">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Générateur de Mapping IFC</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Guide de Prescriptions GID</h1>
           <p className="text-muted-foreground">
-            Mappez vos paramètres Revit vers les propriétés IFC standard GID (CRTI-B Luxembourg)
+            Consultez les propriétés à renseigner dans Revit selon le standard GID (CRTI-B Luxembourg)
           </p>
         </div>
 
@@ -63,7 +63,7 @@ const Index = () => {
           isLoadingElements={isLoadingElements}
         />
 
-        <MappingGenerator
+        <PrescriptionsTable
           projectPhase={projectPhase}
           selectedElement={selectedElement}
           gidData={gidData}
