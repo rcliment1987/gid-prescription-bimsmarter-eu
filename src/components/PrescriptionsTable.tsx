@@ -30,17 +30,22 @@ export function PrescriptionsTable({
     }
 
     // CSV Header
-    const headers = ["Nom de la Propriété", "Paramètre Revit", "Référence IFC", "Groupe", "Requis"];
+    const headers = ["Catégorie", "Sous-catégorie", "Phase", "Type document", "Propriété", "IFC_Reference", "Revit_Param", "Nom", "IFC Type", "Catégorie Revit"];
     const csvLines = [headers.join(";")];
 
     // CSV Data
     filteredRecords.forEach((record) => {
       const row = [
+        `"${record.Categorie}"`,
+        `"${record.Sous_categorie}"`,
+        `"${record.Phase}"`,
+        `"${record.TypeDocument}"`,
         `"${record.Propriete}"`,
-        `"${record.Revit_Param}"`,
         `"${record.IFC_Reference}"`,
-        `"${record.Sous_categorie || record.Categorie}"`,
-        `"${record.Requis}"`,
+        `"${record.Revit_Param}"`,
+        `"${record.Nom}"`,
+        `"${record.IFC_Type}"`,
+        `"${record.Categorie_Revit}"`,
       ];
       csvLines.push(row.join(";"));
     });
@@ -90,9 +95,9 @@ export function PrescriptionsTable({
     );
   }
 
-  // Group records by Sous_categorie or Categorie
+  // Group records by Categorie
   const groupedRecords = filteredRecords.reduce((acc, record) => {
-    const group = record.Sous_categorie || record.Categorie || "Autre";
+    const group = record.Categorie || "Autre";
     if (!acc[group]) acc[group] = [];
     acc[group].push(record);
     return acc;
@@ -108,7 +113,7 @@ export function PrescriptionsTable({
               Cahier des Charges GID
             </CardTitle>
             <CardDescription>
-              {filteredRecords.length} propriétés à renseigner pour <strong>{selectedElement}</strong> en phase <strong>{projectPhase}</strong>
+              {filteredRecords.length} propriétés pour <strong>{selectedElement}</strong> en phase <strong>{projectPhase}</strong>
             </CardDescription>
           </div>
           <Button variant="outline" onClick={handleExportCSV}>
@@ -122,35 +127,38 @@ export function PrescriptionsTable({
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="min-w-[200px]">Nom de la Propriété</TableHead>
-                <TableHead className="min-w-[180px]">Paramètre Revit</TableHead>
-                <TableHead className="min-w-[200px]">Référence IFC</TableHead>
-                <TableHead className="min-w-[120px]">Groupe</TableHead>
-                <TableHead className="w-[80px] text-center">Requis</TableHead>
+                <TableHead className="min-w-[120px]">Catégorie</TableHead>
+                <TableHead className="min-w-[120px]">Sous-catégorie</TableHead>
+                <TableHead className="min-w-[100px]">Type doc.</TableHead>
+                <TableHead className="min-w-[150px]">Propriété</TableHead>
+                <TableHead className="min-w-[200px]">IFC_Reference</TableHead>
+                <TableHead className="min-w-[150px]">Revit_Param</TableHead>
+                <TableHead className="min-w-[150px]">Nom</TableHead>
+                <TableHead className="min-w-[200px]">IFC Type</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {Object.entries(groupedRecords).map(([group, records]) => (
                 records.map((record, index) => (
                   <TableRow key={`${group}-${index}`}>
-                    <TableCell className="font-medium">{record.Propriete}</TableCell>
-                    <TableCell className="font-mono text-sm">{record.Revit_Param}</TableCell>
-                    <TableCell className="font-mono text-sm text-muted-foreground">{record.IFC_Reference}</TableCell>
                     <TableCell>
-                      <Badge variant="outline" className="text-xs">
-                        {group}
+                      <Badge variant="outline" className="text-xs whitespace-nowrap">
+                        {record.Categorie}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-center">
-                      {record.Requis && (
-                        <Badge 
-                          variant={record.Requis.toLowerCase() === "oui" ? "default" : "secondary"} 
-                          className="text-xs"
-                        >
-                          {record.Requis}
+                    <TableCell className="text-sm">{record.Sous_categorie || "-"}</TableCell>
+                    <TableCell className="text-sm">
+                      {record.TypeDocument && (
+                        <Badge variant="secondary" className="text-xs">
+                          {record.TypeDocument}
                         </Badge>
                       )}
                     </TableCell>
+                    <TableCell className="font-medium">{record.Propriete || "-"}</TableCell>
+                    <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Reference || "-"}</TableCell>
+                    <TableCell className="font-mono text-xs">{record.Revit_Param || "-"}</TableCell>
+                    <TableCell className="text-sm">{record.Nom || "-"}</TableCell>
+                    <TableCell className="font-mono text-xs text-muted-foreground">{record.IFC_Type || "-"}</TableCell>
                   </TableRow>
                 ))
               ))}
