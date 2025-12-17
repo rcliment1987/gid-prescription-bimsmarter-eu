@@ -112,7 +112,7 @@ export function GIDChatbot({ selectedElement, projectPhase, prescriptions }: GID
           </Button>
         </SheetTrigger>
 
-        <SheetContent className="w-[400px] sm:w-[450px] flex flex-col p-0 bg-[hsl(222,47%,11%)] border-[hsl(199,89%,48%,0.3)]">
+        <SheetContent className="w-full sm:w-[400px] max-w-[100vw] flex flex-col p-0 bg-[hsl(222,47%,11%)] border-[hsl(199,89%,48%,0.3)]">
           <SheetHeader className="p-4 border-b border-[hsl(199,89%,48%,0.2)]">
             <SheetTitle className="flex items-center gap-2 text-[hsl(199,89%,48%)]">
               <Bot className="h-5 w-5" />
